@@ -12,6 +12,17 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   </tr>
   <tr>
     <td>2019</td>
+    <td><a href="https://github.com/lorenzo-bonetti/TablutAI">Pickle Ricks</a></td>
+    <td>1° 🥇</td>
+    <td>
+      <ul>
+        <li>MiniMax Strategy with Alpha-Beta pruning</li>
+        <li>Custom evaluation</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>2019</td>
     <td><a href="https://github.com/federico-terzi/osarracino">O(sarracino)</a></td>
     <td>2° 🥈</td>
     <td>
@@ -73,8 +84,6 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   </tr>
 -->
 
-- [2019 2° O(sarracino)](https://github.com/federico-terzi/osarracino)
-- [](https://github.com/AlessandroPomponio/B2P-Penicilin-Tablut-AI)
 - [2020 Team gmurro]()
 - [2020 Tabloidi](https://github.com/FedeSpu/TablutCompetition)
 - [2021 ](https://github.com/mazzo98/Tablut)
@@ -84,5 +93,6 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
 - [2020 Barbarians](https://github.com/AlexRossi6/Tablut-MinMax-AI)
   - tree search (minmax with heuristic)
 - [2020 WINNER](https://github.com/lorenzo-bonetti/TablutAI)
+- [](https://github.com/nickromandini/TablutPlayer)
 
 ### References
