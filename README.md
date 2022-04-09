@@ -2,6 +2,16 @@
 Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
 
 
+### TIPS
+- Loggin only if we pass a certain parameter (es -d --debug o -l --log)
+- Try to use the smallest state possible
+- Optimization: use bit operations >> << | & ^ ~
+
+
+### Link Utili
+- [Challenge Web Page](http://ai.unibo.it/games/boardgamecompetition/tablut)
+
+
 ### Repo di Partecipanti Faighi
 <table>
   <tr align="center">
