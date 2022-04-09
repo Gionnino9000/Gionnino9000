@@ -4,13 +4,13 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
 
 ### Repo di Partecipanti Faighi
 <table>
-  <tr>
-    <td>Year</td>
-    <td>Team</td>
-    <td>Placement</td>
-    <td>Notes</td>
+  <tr align="center">
+    <td width="5%">Year</td>
+    <td width="10%">Team</td>
+    <td width="5%">Placement</td>
+    <td width="80%">Notes</td>
   </tr>
-  <tr>
+  <tr align="center">
     <td>2019</td>
     <td><a href="https://github.com/lorenzo-bonetti/TablutAI">Pickle Ricks</a></td>
     <td>1° 🥇</td>
@@ -21,7 +21,7 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
       </ul>
     </td>
   </tr>
-  <tr>
+  <tr align="center">
     <td>2019</td>
     <td><a href="https://github.com/federico-terzi/osarracino">O(sarracino)</a></td>
     <td>2° 🥈</td>
@@ -33,19 +33,18 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
       </ul>
     </td>
   </tr>
-  <tr>
+  <tr align="center">
     <td>2020</td>
     <td><a href="https://github.com/virtualms/Tablut2020_FrittoMisto">FrittoMisto</a></td>
     <td>1° 🥇</td>
     <td>
+      Look at the <a href="https://github.com/virtualms/Tablut2020_FrittoMisto/tree/master/JavaDoc">JavaDocs</a>
       <ul>
-        <li></li>
-        <li></li>
         <li></li>
       </ul>
     </td>
   </tr>
-  <tr>
+  <tr align="center">
     <td>2020</td>
     <td><a href="https://github.com/AlessandroPomponio/B2P-Penicilin-Tablut-AI">B2P</a></td>
     <td>2° 🥈 (Reaper)</td>
@@ -57,7 +56,7 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
       </ul>
     </td>
   </tr>
-  <tr>
+  <tr align="center">
     <td>2020</td>
     <td><a href="https://github.com/AlexRossi6/Tablut-MinMax-AI">Barbarians</a></td>
     <td></td>
@@ -70,7 +69,7 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
 </table>
 <!--
   🥇 🥈 🥉 
-  <tr>
+  <tr align="center">
     <td></td>
     <td><a href=""></a></td>
     <td></td>
@@ -84,15 +83,16 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   </tr>
 -->
 
+<!--
 - [2020 Team gmurro]()
 - [2020 Tabloidi](https://github.com/FedeSpu/TablutCompetition)
 - [2021 ](https://github.com/mazzo98/Tablut)
 - [2021 ](https://github.com/alessandrostockman/almarima-tablut)
 - [2019 ](https://github.com/EleMisi/TablutAI)
 - [2019 ](https://github.com/LorenzoPiazza/Tabroot)
-- [2020 Barbarians](https://github.com/AlexRossi6/Tablut-MinMax-AI)
-  - tree search (minmax with heuristic)
 - [2020 WINNER](https://github.com/lorenzo-bonetti/TablutAI)
 - [](https://github.com/nickromandini/TablutPlayer)
+-->
+
 
 ### References
