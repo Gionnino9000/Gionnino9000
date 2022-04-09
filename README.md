@@ -1,12 +1,15 @@
 <h1 align="center">Gionnino9000</h1>
 <div align="center">
-Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di [Fondamenti di Intelligenza Artificiale M](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002).
+
+  Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di [Fondamenti di Intelligenza Artificiale M](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002).
+  
 </div>
 
 ### Spiegazione del Nome (Per i Normie dall'Infanzia Decisamente MOLTO Triste)
 Tablut = Tavoletta<br/>
 Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**<br/>
-Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome)<br/><br/>
+Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)<br/>
+9000 = <br/><br/>
 *Fine della Spiegazione del Nome*
 
 
