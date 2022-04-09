@@ -12,15 +12,19 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
 9000 = piccola **nerd reference** a 2001 Odissea nello Spazio, **HAL9000**<br/><br/>
 *Fine della Spiegazione del Nome*
 
-
 ### Membri del Team
 - [Federico Andrucci](https://github.com/Federicoand98)
 - [Karina Chichifoi](https://github.com/TryKatChup)
 - [Alex Gianelli](https://github.com/Noesh)
 - [Michele Righi](https://github.com/mikyll)
 
+### Team degli Anni Precedenti
+[History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
 
-### Setup Virtual Machine
+### Riferimenti
+- http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf
+
+### Setup Macchina Virtuale
 1. Scaricare l'immagine .ova da [questo link](https://liveunibo-my.sharepoint.com/:u:/g/personal/andrea_giovine_unibo_it/Eb_-2bR2YNtAs_F7D2i8jFkBY0KWWKfjNIY4-AoGMwVHFA)
 2. Importare ed eseguire la VM
 3. Accedere con username: "tablut", password: "tablut"
@@ -33,20 +37,9 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
   sudo apt install ant -y
   ```
 
-
 ### Memoni Giganti
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/WidePlank.gif"/>
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoSus.png"/>
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/TavolettaPiediGrandi.png"/>
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/TavolettaPH.png"/>
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/BigPP.png"/>
-
-
-### Teams of the Precedent Years
-[History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
-
-
-### References
-
-
-
