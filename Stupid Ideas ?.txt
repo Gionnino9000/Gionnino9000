@@ -1,0 +1,23 @@
+Iterative Deepening search using MinMax(?) algorithm and AlphaBeta(?) cuts.
+
+- Could we use in some ways previously calculated states to go deeper and choose better? In case yes, Is it worth it? And if it is, can we calculate ahead before doing the first move while we setup?
+- what is the best way to represent the board state bitwise? Stockfish tries to move less bits as possible to be faster (https://towardsdatascience.com/dissecting-stockfish-part-1-in-depth-look-at-a-chess-engine-7fddd1d83579)
+- 
+
+
+Heuristics: 	- change from early/mid/late game?
+		- should we have "priorities" computing the branches?
+		- could we change algorithm during the lategame as trees get more deeper than wider?
+
+
+
+0 0 0 - - - 0 0 0 	<- possible board moves for white? Usable representation?
+0 0 0 0 - 0 0 0 0
+0 0 0 0 0 0 0 0 0
+- 0 0 0 0 0 0 0 -
+- - 0 0 - 0 0 - -
+- 0 0 0 0 0 0 0 -
+0 0 0 0 0 0 0 0 0
+0 0 0 0 - 0 0 0 0
+0 0 0 - - - 0 0 0
+
