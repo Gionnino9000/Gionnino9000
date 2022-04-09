@@ -1,6 +1,7 @@
 logs/
 garbage/
 build/
+classes/
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij,eclipse
