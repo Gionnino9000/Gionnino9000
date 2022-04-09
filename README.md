@@ -12,7 +12,7 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   </tr>
   <tr>
     <td>2019</td>
-    <td>[O(sarracino)](https://github.com/federico-terzi/osarracino)</td>
+    <td><a href="https://github.com/federico-terzi/osarracino">O(sarracino)</a></td>
     <td>2° 🥈</td>
     <td>
       <ul>
