@@ -8,7 +8,7 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
 - Optimization: use bit operations >> << | & ^ ~
 
 
-### Link Utili
+### Useful Links
 - [Challenge Web Page](http://ai.unibo.it/games/boardgamecompetition/tablut)
 
 
@@ -25,5 +25,7 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   sudo apt install ant -y
   ```
 
+### Teams of the Precedent Years
+[History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
 
 ### References
