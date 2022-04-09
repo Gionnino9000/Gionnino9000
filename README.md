@@ -35,7 +35,11 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
 
 
 ### Memoni Giganti
-
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/WidePlank.gif"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoSus.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/TavolettaPiediGrandi.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/TavolettaPH.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/BigPP.png"/>
 
 
 ### Teams of the Precedent Years
