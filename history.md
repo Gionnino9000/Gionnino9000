@@ -1,6 +1,7 @@
 # Partecipanti Anni Precedenti
 
 <table>
+<!-- //////////////////// YEAR 2019 //////////////////// -->
   <tr align="center">
     <td width="5%">Year</td>
     <td width="10%">Team</td>
@@ -30,6 +31,8 @@
       </ul>
     </td>
   </tr>
+  <tr align="center"><td></td><td></td><td></td><td></td></tr>
+<!-- //////////////////// YEAR 2020 //////////////////// -->
   <tr align="center">
     <td>2020</td>
     <td><a href="https://github.com/virtualms/Tablut2020_FrittoMisto">FrittoMisto</a></td>
@@ -55,11 +58,73 @@
   </tr>
   <tr align="center">
     <td>2020</td>
+    <td><a href="https://github.com/alebov/IbimbidiGiuseppeConte">I bimbi di Giuseppe Conte</a></td>
+    <td>3° 🥉</td>
+    <td>
+      <ul>
+        <li>C Language</li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>2020</td>
     <td><a href="https://github.com/AlexRossi6/Tablut-MinMax-AI">Barbarians</a></td>
     <td></td>
     <td>
       <ul>
         <li>tree search (minmax with heuristic)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr align="center"><td></td><td></td><td></td><td></td></tr>
+<!-- //////////////////// YEAR 2021 //////////////////// -->
+  <tr align="center">
+    <td>2021</td>
+    <td><a href="https://github.com/Zeegomo/weakmind">Weakmind</a></td>
+    <td>1° 🥇</td>
+    <td>
+      <ul>
+        <li>Rust Language</li>
+        <li>Min Max</li>
+        <li>MCTS (Monte Carlo Tree Search)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>2021</td>
+    <td><a href="https://github.com/HerbieNaL/Tablut_AlmaZeneca">AlmaZeneca</a></td>
+    <td>2° 🥈</td>
+    <td>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>2021</td>
+    <td><a href="https://github.com/AlessandroMusarella/Tablut">MrMeeseeks</a></td>
+    <td>3° 🥉</td>
+    <td>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>2021</td>
+    <td><a href="https://github.com/Lanzo98/Tablut2021_SeverusPython">SeverusPython</a></td>
+    <td>4°</td>
+    <td>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
       </ul>
     </td>
   </tr>
