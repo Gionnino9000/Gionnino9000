@@ -1,5 +1,6 @@
 # Partecipanti Anni Precedenti
 
+### INF Challenge
 <table>
 <!-- //////////////////// YEAR 2019 //////////////////// -->
   <tr align="center">
@@ -10,12 +11,13 @@
   </tr>
   <tr align="center">
     <td>2019</td>
-    <td><a href="https://github.com/lorenzo-bonetti/TablutAI">Pickle Ricks</a></td>
+    <td><a href="https://github.com/MatteoCastiglio/Daniele">Daniele</a></td>
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>MiniMax Strategy with Alpha-Beta pruning</li>
-        <li>Custom evaluation</li>
+        <li>SingleThreaded MinMax</li>
+        <li>Iterative Deeping, AlphaBeta Pruning and Partial Ordering Between Iterations</li>
+        <li>Heuristic Strongly Based on Playing Around the King</li>
       </ul>
     </td>
   </tr>
@@ -27,7 +29,19 @@
       <ul>
         <li>Multi-threading</li>
         <li>Bit operations</li>
-        <li>CPU intrinsics</li>
+        <li>CPU intrinsics (native processor instructions)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>2019</td>
+    <td><a href="https://github.com/mcampestri/NemoTablut">NemoTablut</a></td>
+    <td>3° 🥉</td>
+    <td>
+      <ul>
+        <li>C Language</li>
+        <li>pthread</li>
+        <li></li>
       </ul>
     </td>
   </tr>
@@ -70,11 +84,13 @@
   </tr>
   <tr align="center">
     <td>2020</td>
-    <td><a href="https://github.com/AlexRossi6/Tablut-MinMax-AI">Barbarians</a></td>
-    <td></td>
+    <td><a href="https://github.com/imRaazy/YinIAngWarriorsTablut">YinYIAng Warriors</a>     </td>
+    <td>4°</td>
     <td>
       <ul>
-        <li>tree search (minmax with heuristic)</li>
+        <li>Kotlin Language</li>
+        <li>Iterative Deepening Alpha Beta Search</li>
+        <li><ins>Great Explaination <a href="https://github.com/imRaazy/YinIAngWarriorsTablut/blob/master/YinIAngWarriors_introduction.pdf">PDF</a></ins></li>
       </ul>
     </td>
   </tr>
@@ -155,3 +171,39 @@
 - [2020 WINNER](https://github.com/lorenzo-bonetti/TablutAI)
 - [](https://github.com/nickromandini/TablutPlayer)
 -->
+
+### AI Challenge
+<table>
+<!-- //////////////////// YEAR 2019 //////////////////// -->
+  <tr align="center">
+    <td width="5%">Year</td>
+    <td width="10%">Team</td>
+    <td width="5%">Placement</td>
+    <td width="80%">Notes</td>
+  </tr>
+  <tr align="center">
+    <td>2019</td>
+    <td><a href="https://github.com/lorenzo-bonetti/TablutAI">Pickle Ricks</a></td>
+    <td>1° 🥇</td>
+    <td>
+      <ul>
+        <li>MiniMax Strategy with Alpha-Beta pruning</li>
+        <li>Custom evaluation</li>
+      </ul>
+    </td>
+  </tr>
+<tr align="center"><td></td><td></td><td></td><td></td></tr>
+<!-- //////////////////// YEAR 2020 //////////////////// -->
+  <tr align="center">
+    <td>2020</td>
+    <td><a href="https://github.com/gmurro/Tablut">brAInmates</a></td>
+    <td>1° 🥇</td>
+    <td>
+      <ul>
+        <li>MinMax, Alpha Beta Cuts and Iterative Deepening Search</li>
+        <li>Simple Heuristics</li>
+        <li><ins>Great Explaination in <a href="https://github.com/gmurro/Tablut/blob/main/BrAInmatesTablutPresentation.pdf">PDF</a></ins></li>
+      </ul>
+    </td>
+  </tr>
+</table>
