@@ -23,34 +23,26 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
     </td>
   </tr>
   <tr>
+    <td>2019</td>
+    <td><a href=""></a></td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
   </tr>
   <tr>
+    <td>2020</td>
+    <td><a href="https://github.com/AlexRossi6/Tablut-MinMax-AI">Barbarians</a></td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li>tree search (minmax with heuristic)</li>
+      </ul>
+    </td>
   </tr>
 </table>
 
@@ -58,9 +50,15 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   🥇 🥈 🥉 
   <tr>
     <td></td>
+    <td><a href=""></a></td>
     <td></td>
-    <td></td>
-    <td></td>
+    <td>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
   </tr>
 -->
 
@@ -72,7 +70,8 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
 - [2021 ](https://github.com/alessandrostockman/almarima-tablut)
 - [2019 ](https://github.com/EleMisi/TablutAI)
 - [2019 ](https://github.com/LorenzoPiazza/Tabroot)
-- [2020 ](https://github.com/AlexRossi6/Tablut-MinMax-AI)
+- [2020 Barbarians](https://github.com/AlexRossi6/Tablut-MinMax-AI)
+  - tree search (minmax with heuristic)
 - [2020 WINNER](https://github.com/lorenzo-bonetti/TablutAI)
 
 ### References
