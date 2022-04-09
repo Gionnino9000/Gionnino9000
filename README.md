@@ -24,6 +24,18 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
   </tr>
   <tr>
     <td>2020</td>
+    <td><a href="https://github.com/virtualms/Tablut2020_FrittoMisto">FrittoMisto</a></td>
+    <td>1° 🥇</td>
+    <td>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>2020</td>
     <td><a href="https://github.com/AlessandroPomponio/B2P-Penicilin-Tablut-AI">B2P</a></td>
     <td>2° 🥈 (Reaper)</td>
     <td>
@@ -45,7 +57,6 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
     </td>
   </tr>
 </table>
-
 <!--
   🥇 🥈 🥉 
   <tr>
