@@ -21,3 +21,8 @@ Heuristics: 	- change from early/mid/late game?
 0 0 0 0 - 0 0 0 0
 0 0 0 - - - 0 0 0
 
+
+
+
+- Loggin only if we pass a certain parameter (es -d --debug o -l --log)
+- Possible optimization: use bit operations >> << | & ^ ~
