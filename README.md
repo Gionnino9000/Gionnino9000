@@ -22,7 +22,7 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
 [History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
 
 ### Riferimenti
-- http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf
+- [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
 
 ### Setup Macchina Virtuale
 1. Scaricare l'immagine .ova da [questo link](https://liveunibo-my.sharepoint.com/:u:/g/personal/andrea_giovine_unibo_it/Eb_-2bR2YNtAs_F7D2i8jFkBY0KWWKfjNIY4-AoGMwVHFA)
