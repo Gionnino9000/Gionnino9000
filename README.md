@@ -9,7 +9,7 @@
 Tablut = Tavoletta<br/>
 Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**<br/>
 Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)<br/>
-9000 = piccola **nerd reference** a 2001 Odissea nello Spazio, **HAL9000*<br/><br/>
+9000 = piccola **nerd reference** a 2001 Odissea nello Spazio, **HAL9000**<br/><br/>
 *Fine della Spiegazione del Nome*
 
 
