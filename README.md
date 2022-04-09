@@ -18,11 +18,6 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
 - [Karina Chichifoi](https://github.com/TryKatChup)
 - [Alex Gianelli](https://github.com/Noesh)
 - [Michele Righi](https://github.com/mikyll)
-  
-
-### Memoni Giganti
-- Amogus di Tavoletta
-- Tavoletta con i piedi grandi
 
 
 ### Setup Virtual Machine
@@ -39,8 +34,15 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
   ```
 
 
+### Memoni Giganti
+
+
+
 ### Teams of the Precedent Years
 [History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
 
 
 ### References
+
+
+
