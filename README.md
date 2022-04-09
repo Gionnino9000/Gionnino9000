@@ -23,14 +23,14 @@ Repository for the Player Agent made for the Ashton Tablut game Challenge 2022
     </td>
   </tr>
   <tr>
-    <td>2019</td>
-    <td><a href=""></a></td>
-    <td></td>
+    <td>2020</td>
+    <td><a href="https://github.com/AlessandroPomponio/B2P-Penicilin-Tablut-AI">B2P</a></td>
+    <td>2° 🥈 (Reaper)</td>
     <td>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>BitSet</li>
+        <li>Minimax with alpha-beta pruning (made concurrent)</li>
+        <li>Simple Heuristic</li>
       </ul>
     </td>
   </tr>
