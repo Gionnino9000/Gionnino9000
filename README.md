@@ -22,6 +22,7 @@ Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il n
 [History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
 
 ### Riferimenti
+- [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
 
 ### Setup Macchina Virtuale
