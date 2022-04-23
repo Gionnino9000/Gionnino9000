@@ -2,6 +2,8 @@ Tablut/logs/
 Tablut/garbage/
 Tablut/build/
 Tablut/classes/
+logs/
+garbage/
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,intellij,eclipse
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij,eclipse
@@ -207,3 +209,5 @@ hs_err_pid*
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 .DS_Store
 .idea
+
+
