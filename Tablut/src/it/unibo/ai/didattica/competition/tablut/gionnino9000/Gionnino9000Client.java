@@ -1,6 +1,10 @@
 package it.unibo.ai.didattica.competition.tablut.gionnino9000;
 
 import it.unibo.ai.didattica.competition.tablut.client.TablutClient;
+import it.unibo.ai.didattica.competition.tablut.domain.Action;
+import it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut;
+import it.unibo.ai.didattica.competition.tablut.domain.State;
+import it.unibo.ai.didattica.competition.tablut.domain.StateTablut;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -82,12 +86,115 @@ public class Gionnino9000Client extends TablutClient {
 
     @Override
     public void run() {
+        GOGionninoDoTheMagicAndShine();
+
+        // send marvelous name to the server
+        try {
+            this.declareName();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        State state = new StateTablut();
+        state.setTurn(State.Turn.WHITE);
+        GameAshtonTablut tablut = new GameAshtonTablut(0, -1, "logs", "white_ai", "black_ai");
+
+        while(true) {
+            // update the current state from the server
+            try {
+                this.read();
+            } catch (ClassNotFoundException | IOException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+            System.out.println("[GIONNINO9000] | Current state: ");
+            state = this.getCurrentState();
+            System.out.println(state.toString());
+
+            // if WHITE turn
+            if(this.getPlayer().equals(State.Turn.WHITE)) {
+
+                if(state.getTurn().equals(State.Turn.WHITE)) {
+
+                    System.out.println("[GIONNINO9000] | Searching a suitable move...");
+
+                    Action a = findBestMove(tablut, state);
+
+                    System.out.println("[GIONNINO9000] | Action selected: " + a.toString());
+
+                    try {
+                        this.write(a);
+                    } catch (ClassNotFoundException | IOException e) {
+                        e.printStackTrace();
+                    }
+
+                } else if(state.getTurn().equals(State.Turn.BLACK)) {
+                    // Opponent TURN
+                    System.out.println("[GIONNINO9000] | Waiting for the opponent turn...");
+                } else if(state.getTurn().equals(State.Turn.WHITEWIN)) {
+                    // if WHITE win
+                    System.out.println("[GIONNINO9000] | YOU WIN");
+                    System.exit(0);
+                } else if(state.getTurn().equals(State.Turn.BLACKWIN)) {
+                    // if BLACK win
+                    System.out.println("[GIONNINO9000] | YOU LOSE");
+                    System.exit(0);
+                } else if(state.getTurn().equals(State.Turn.DRAW)) {
+                    System.out.println("[GIONNINO9000] | DRAW");
+                    System.exit(0);
+                }
+            }
+            // if BLACK turn
+            else {
+
+                if(state.getTurn().equals(State.Turn.BLACK)) {
+
+                    System.out.println("[GIONNINO9000] | Searching a suitable move...");
+
+                    Action a = findBestMove(tablut, state);
+
+                    System.out.println("[GIONNINO9000] | Action selected: " + a.toString());
+
+                    try {
+                        this.write(a);
+                    } catch (ClassNotFoundException | IOException e) {
+                        e.printStackTrace();
+                    }
+
+                } else if(state.getTurn().equals(State.Turn.WHITE)) {
+                    // Opponent TURN
+                    System.out.println("[GIONNINO9000] | Waiting for the opponent turn...");
+                } else if(state.getTurn().equals(State.Turn.BLACKWIN)) {
+                    // if WHITE win
+                    System.out.println("[GIONNINO9000] | YOU WIN");
+                    System.exit(0);
+                } else if(state.getTurn().equals(State.Turn.WHITEWIN)) {
+                    // if BLACK win
+                    System.out.println("[GIONNINO9000] | YOU LOSE");
+                    System.exit(0);
+                } else if(state.getTurn().equals(State.Turn.DRAW)) {
+                    System.out.println("[GIONNINO9000] | DRAW");
+                    System.exit(0);
+                }
+
+            }
+        }
+    }
+
+    private Action findBestMove(GameAshtonTablut tablutGame, State state) {
+        // le cose belle
+        return null;
+    }
+
+    private void GOGionninoDoTheMagicAndShine() {
         System.out.println(
-                " ░██████╗░██╗░█████╗░███╗░░██╗███╗░░██╗██╗███╗░░██╗░█████╗░░█████╗░░█████╗░░█████╗░░█████╗░ " +
-                " ██╔════╝░██║██╔══██╗████╗░██║████╗░██║██║████╗░██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗ " +
-                " ██║░░██╗░██║██║░░██║██╔██╗██║██╔██╗██║██║██╔██╗██║██║░░██║╚██████║██║░░██║██║░░██║██║░░██║ " +
-                " ██║░░╚██╗██║██║░░██║██║╚████║██║╚████║██║██║╚████║██║░░██║░╚═══██║██║░░██║██║░░██║██║░░██║ " +
-                " ╚██████╔╝██║╚█████╔╝██║░╚███║██║░╚███║██║██║░╚███║╚█████╔╝░█████╔╝╚█████╔╝╚█████╔╝╚█████╔╝ " +
-                " ░╚═════╝░╚═╝░╚════╝░╚═╝░░╚══╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚════╝░░╚════╝░░╚════╝░░╚════╝░░╚════╝░ " );
+                        " ░██████╗░██╗░█████╗░███╗░░██╗███╗░░██╗██╗███╗░░██╗░█████╗░░█████╗░░█████╗░░█████╗░░█████╗░ " +
+                        " ██╔════╝░██║██╔══██╗████╗░██║████╗░██║██║████╗░██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗ " +
+                        " ██║░░██╗░██║██║░░██║██╔██╗██║██╔██╗██║██║██╔██╗██║██║░░██║╚██████║██║░░██║██║░░██║██║░░██║ " +
+                        " ██║░░╚██╗██║██║░░██║██║╚████║██║╚████║██║██║╚████║██║░░██║░╚═══██║██║░░██║██║░░██║██║░░██║ " +
+                        " ╚██████╔╝██║╚█████╔╝██║░╚███║██║░╚███║██║██║░╚███║╚█████╔╝░█████╔╝╚█████╔╝╚█████╔╝╚█████╔╝ " +
+                        " ░╚═════╝░╚═╝░╚════╝░╚═╝░░╚══╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚════╝░░╚════╝░░╚════╝░░╚════╝░░╚════╝░ "
+        );
     }
 }
