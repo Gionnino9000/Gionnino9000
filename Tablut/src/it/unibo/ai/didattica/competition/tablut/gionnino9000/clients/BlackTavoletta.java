@@ -1,9 +1,9 @@
-package it.unibo.ai.didattica.competition.tablut.gionnino9000;
+package it.unibo.ai.didattica.competition.tablut.gionnino9000.clients;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-public class Gionnino9000BlackClient {
+public class BlackTavoletta {
 
     public static void main(String[] args) throws UnknownHostException, ClassNotFoundException, IOException {
         String[] arguments = new String[]{"BLACK", "60", "localhost", "debug"};
@@ -12,6 +12,6 @@ public class Gionnino9000BlackClient {
             arguments = new String[]{"BLACK", args[0]};
         }
 
-        Gionnino9000Client.main(arguments);
+        Tavoletta.main(arguments);
     }
 }

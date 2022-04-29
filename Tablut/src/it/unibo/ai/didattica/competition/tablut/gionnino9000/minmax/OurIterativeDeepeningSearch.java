@@ -13,6 +13,6 @@ public class OurIterativeDeepeningSearch extends IterativeDeepeningAlphaBetaSear
 
     @Override
     protected double eval(State state, State.Turn player) {
-
+        return 0.0;
     }
 }
