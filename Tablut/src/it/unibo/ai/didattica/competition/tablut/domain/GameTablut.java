@@ -66,9 +66,9 @@ public class GameTablut implements Game {
 	 * @throws DiagonalException try to move a pawn diagonally 
 	 * @throws ClimbingException try to climb over another pawn
 	 * @throws ThroneException try to move a pawn into the throne box
-	 * @throws OccupitedException try to move a pawn into an ccupited box
+	 * @throws OccupiedException try to move a pawn into an ccupited box
 	 */
-	public State checkMove(State state, Action a) throws BoardException, ActionException, StopException, PawnException, DiagonalException, ClimbingException, ThroneException, OccupitedException
+	public State checkMove(State state, Action a) throws BoardException, ActionException, StopException, PawnException, DiagonalException, ClimbingException, ThroneException, OccupiedException
 	{
 		//this.loggGame.fine(a.toString());
 		//controllo la mossa
@@ -100,7 +100,7 @@ public class GameTablut implements Game {
 		if(!state.getPawn(rowTo, columnTo).equalsPawn(State.Pawn.EMPTY.toString()))
 		{
 			this.loggGame.warning("Mossa sopra una casella occupata");
-			throw new OccupitedException(a);
+			throw new OccupiedException(a);
 		}
 		
 		//controllo se cerco di stare fermo
@@ -327,7 +327,7 @@ public class GameTablut implements Game {
 		//controllo se mangio a destra
 		if(a.getColumnTo()<state.getBoard().length-2 && (state.getPawn(a.getRowTo(), a.getColumnTo()+1).equalsPawn("W")||state.getPawn(a.getRowTo(), a.getColumnTo()+1).equalsPawn("K")) && (state.getPawn(a.getRowTo(), a.getColumnTo()+2).equalsPawn("B")||state.getPawn(a.getRowTo(), a.getColumnTo()+2).equalsPawn("T")))
 		{
-			//nero-re-trono N.B. No indexOutOfBoundException perchè se il re si trovasse sul bordo il giocatore bianco avrebbe già vinto
+			//nero-re-trono N.B. No indexOutOfBoundException perchï¿½ se il re si trovasse sul bordo il giocatore bianco avrebbe giï¿½ vinto
 			if(state.getPawn(a.getRowTo(), a.getColumnTo()+1).equalsPawn("K") && state.getPawn(a.getRowTo(), a.getColumnTo()+2).equalsPawn("T"))
 			{
 				//ho circondato su 3 lati il re?

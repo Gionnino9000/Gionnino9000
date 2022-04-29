@@ -1,12 +1,10 @@
 package it.unibo.ai.didattica.competition.tablut.domain;
 
-import it.unibo.ai.didattica.competition.tablut.domain.Action;
-import it.unibo.ai.didattica.competition.tablut.domain.State;
 import it.unibo.ai.didattica.competition.tablut.exceptions.ActionException;
 import it.unibo.ai.didattica.competition.tablut.exceptions.BoardException;
 import it.unibo.ai.didattica.competition.tablut.exceptions.ClimbingException;
 import it.unibo.ai.didattica.competition.tablut.exceptions.DiagonalException;
-import it.unibo.ai.didattica.competition.tablut.exceptions.OccupitedException;
+import it.unibo.ai.didattica.competition.tablut.exceptions.OccupiedException;
 import it.unibo.ai.didattica.competition.tablut.exceptions.PawnException;
 import it.unibo.ai.didattica.competition.tablut.exceptions.StopException;
 import it.unibo.ai.didattica.competition.tablut.exceptions.ThroneException;
@@ -32,7 +30,7 @@ public class GameModernTablut implements Game {
 
 	@Override
 	public State checkMove(State state, Action a) throws BoardException, ActionException, StopException, PawnException,
-			DiagonalException, ClimbingException, ThroneException, OccupitedException {
+			DiagonalException, ClimbingException, ThroneException, OccupiedException {
 		// this.loggGame.fine(a.toString());
 		// controllo la mossa
 		if (a.getTo().length() != 2 || a.getFrom().length() != 2) {
@@ -61,7 +59,7 @@ public class GameModernTablut implements Game {
 		// controllo la casella di arrivo
 		if (!state.getPawn(rowTo, columnTo).equalsPawn(State.Pawn.EMPTY.toString())) {
 			// this.loggGame.warning("Mossa sopra una casella occupata");
-			throw new OccupitedException(a);
+			throw new OccupiedException(a);
 		}
 
 		// controllo se cerco di stare fermo
@@ -248,8 +246,8 @@ public class GameModernTablut implements Game {
 						|| state.getPawn(a.getRowTo(), a.getColumnTo() + 1).equalsPawn("K"))
 				&& (state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("B")
 						|| state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("T"))) {
-			// nero-re-trono N.B. No indexOutOfBoundException perchè se il re si
-			// trovasse sul bordo il giocatore bianco avrebbe già vinto
+			// nero-re-trono N.B. No indexOutOfBoundException perchï¿½ se il re si
+			// trovasse sul bordo il giocatore bianco avrebbe giï¿½ vinto
 			if (state.getPawn(a.getRowTo(), a.getColumnTo() + 1).equalsPawn("K")
 					&& state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("T")) {
 				// ho circondato il re?
