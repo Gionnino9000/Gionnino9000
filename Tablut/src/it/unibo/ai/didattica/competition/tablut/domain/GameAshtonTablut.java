@@ -22,7 +22,7 @@ import it.unibo.ai.didattica.competition.tablut.exceptions.*;
  *
  *
  */
-public class GameAshtonTablut implements Game {
+public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adversarial.Game<State, Action, State.Turn> {
 	public static final int NUM_BLACK = 16;
 	public static final int NUM_WHITE = 8;
 	/**
@@ -782,5 +782,112 @@ public class GameAshtonTablut implements Game {
 			}
 		}
 		return true;
+	}
+
+	// Clonable Interface
+	@Override
+	public GameAshtonTablut clone()
+	{
+		try
+		{
+			GameAshtonTablut clone = (GameAshtonTablut) super.clone();
+			clone.repeated_moves_allowed = this.repeated_moves_allowed;
+			clone.cache_size = this.cache_size;
+			clone.movesWithutCapturing = this.movesWithutCapturing;
+			clone.gameLogName = this.gameLogName;
+			clone.gameLog = this.gameLog;
+			clone.fh = this.fh;
+			clone.loggGame = this.loggGame;
+			clone.citadels = this.citadels;
+			clone.drawConditions = this.drawConditions;
+
+			return clone;
+		} catch (CloneNotSupportedException e)
+		{
+			throw new AssertionError();
+		}
+	}
+
+	// aima.core.search.adversarial.Game Interaface
+	/**
+	 * Get the player who must make the next move
+	 *
+	 * @param state Current state of the game
+	 * @return The turn of the game (W = WHITE, B = BLACK)
+	 */
+	@Override
+	public State.Turn getPlayer(State state)
+	{
+		return state.getTurn();
+	}
+
+	/**
+	 * Method that compute a list of all possible actions for the current player according to the rules of the game
+	 *
+	 * @param state Current state of the game
+	 * @return List of all the Action allowed from current state for each pawn of the player
+	 */
+	@Override
+	public List<Action> getActions(State state)
+	{
+		/*State.Turn turn = state.getTurn();
+		List<Action> possibleActions = new ArrayList<Action>();
+
+		// Loop through rows
+		for(int i = 0; i < state.getBoard().length; i++)
+		{
+			// Loop through columns
+			for(int j = 0; j < state.getBoard().length; j++)
+			{
+				State.Pawn p = state.getPawn(i, j);
+
+				// Check
+				if(p.toString().equals(turn.toString()) ||
+						(p.equals(State.Pawn.KING) && turn.toString().equals(State.Turn.WHITE))
+				{
+					// TODO
+				}
+			}
+		}*/
+
+		return null;
+	}
+
+	@Override
+	public State getResult(State state, Action action)
+	{
+		return null;
+	}
+
+	/**
+	 * Check if a state is terminal, since a player has either won or drawn (i.e. the game ends)
+	 *
+	 * @param state Current state of the game
+	 * @return true if the current state is terminal, otherwise false
+	 */
+	@Override
+	public boolean isTerminal(State state)
+	{
+		return state.getTurn().equals(State.Turn.WHITEWIN) || state.getTurn().equals(State.Turn.BLACKWIN) || state.getTurn().equals(State.Turn.DRAW);
+	}
+
+	@Override
+	public double getUtility(State state, State.Turn turn)
+	{
+		return 0;
+	}
+
+	/* Not used in AlphaBetaSearch */
+	@Override
+	public State getInitialState()
+	{
+		return null;
+	}
+
+	/* Not used in AlphaBetaSearch*/
+	@Override
+	public State.Turn[] getPlayers()
+	{
+		return State.Turn.values();
 	}
 }
