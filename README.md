@@ -10,7 +10,9 @@ Tablut = Tavoletta<br/>
 Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**<br/>
 Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)<br/>
 9000 = piccola **nerd reference** a 2001 Odissea nello Spazio, **HAL9000**<br/><br/>
-*Fine della Spiegazione del Nome*
+*Fine della Spiegazione del Nome*<br/><br/>
+Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non puoi capire), quando all'improvviso mi sono ricordato che quel bro di Danny Antonucci aveva fatto tipo un masterpiece. E allora ho assolutamente dovuto sussare un nome zio, ho dovuto mostrare un po' di drip my G, no cap, only flames 🥶 e ho droppato sto pezzo di nome gigante my guy, figata. Perché praticamente vez, noi così siamo il team Gionnino9000, e tipo il nostro player è Tavoletta. Capito bel? Perché gioca a Tablut, troppo figata, facts.
+
 
 ### Membri del Team
 - [Federico Andrucci](https://github.com/Federicoand98)
