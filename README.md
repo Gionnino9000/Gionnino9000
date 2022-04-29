@@ -1,7 +1,8 @@
 <h1 align="center">Gionnino9000</h1>
 <div align="center">
 
-  Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di [Fondamenti di Intelligenza Artificiale M](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002).
+  Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di [Fondamenti di Intelligenza Artificiale M](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002).<br/><br/>
+  <a href="https://www.youtube.com/watch?v=G2NjmWRps28">Ascolta sto banger</a>
   
 </div>
 
@@ -9,9 +10,11 @@
 Tablut = Tavoletta<br/>
 Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**<br/>
 Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)<br/>
-9000 = piccola **nerd reference** a 2001 Odissea nello Spazio, **HAL9000**<br/><br/>
-*Fine della Spiegazione del Nome*<br/><br/>
-Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non puoi capire), quando all'improvviso mi sono ricordato che quel bro di Danny Antonucci aveva fatto tipo un masterpiece. E allora ho assolutamente dovuto sussare un nome zio, ho dovuto mostrare un po' di drip my G, no cap, only flames 🥶 e ho droppato sto pezzo di nome gigante my guy, figata. Perché praticamente vez, noi così siamo il team Gionnino9000, e tipo il nostro player è Tavoletta. Capito bel? Perché gioca a Tablut, troppo figata, facts.
+9000 = piccola **nerd reference** a 2001 Odissea nello Spazio, **HAL9000**<br/>
+<br/>
+*Fine della Spiegazione del Nome*<br/>
+<br/>
+Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non puoi capire), quando all'improvviso mi sono ricordato che quel chad di Danny Antonucci aveva fatto tipo un [masterpiece](https://en.wikipedia.org/wiki/Ed,_Edd_n_Eddy). E allora ho assolutamente dovuto sussare un nome zio, ho dovuto mostrare un po' di drip, no cap my G, only flames 🥶 e ho droppato sto pezzo di nome gigante bro, figata. Perché praticamente vez, noi così siamo il team Gionnino9000, e tipo il nostro player è Tavoletta. Capito bel? Perché gioca a Tablut, troppo figata, sigma grindset, basato fattuale.
 
 
 ### Membri del Team
