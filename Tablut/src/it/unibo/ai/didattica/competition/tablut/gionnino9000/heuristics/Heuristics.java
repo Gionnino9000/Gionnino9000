@@ -157,7 +157,7 @@ public abstract class Heuristics {
         // left side
         for (int i = column-1; i >= 0; i--) {
             currentPosition[1] = i;
-            if (checkOccupiedPosition(state,currentPosition)){
+            if (isPositionOccupied(state,currentPosition)){
                 freeWays--;
                 break;
             }
@@ -166,7 +166,7 @@ public abstract class Heuristics {
         // right side
         for (int i = column+1; i <= 8; i++) {
             currentPosition[1] = i;
-            if (checkOccupiedPosition(state, currentPosition)) {
+            if (isPositionOccupied(state, currentPosition)) {
                 freeWays--;
                 break;
             }
@@ -188,7 +188,7 @@ public abstract class Heuristics {
         // downside
         for(int i=row+1;i<=8;i++) {
             currentPosition[0]=i;
-            if (checkOccupiedPosition(state,currentPosition)) {
+            if (isPositionOccupied(state,currentPosition)) {
                 freeWays--;
                 break;
             }
@@ -197,7 +197,7 @@ public abstract class Heuristics {
         // upside
         for(int i=row-1;i>=0;i--) {
             currentPosition[0]=i;
-            if (checkOccupiedPosition(state,currentPosition)){
+            if (isPositionOccupied(state,currentPosition)){
                 freeWays--;
                 break;
             }
@@ -206,11 +206,29 @@ public abstract class Heuristics {
         return freeWays;
     }
 
+
     /**
      * @return true if a position is occupied, false otherwise
      */
-    public boolean checkOccupiedPosition(State state,int[] position){
+    public boolean isPositionOccupied(State state,int[] position){
         return !state.getPawn(position[0], position[1]).equals(State.Pawn.EMPTY);
+    }
+
+
+    /**
+     * @return number of positions needed to eat king in the current state
+     */
+    public int getNumbToEatKing(State state){
+        int[] kingPosition = kingPosition(state);
+
+        if (kingPosition[0] == 4 && kingPosition[1] == 4){
+            return 4;
+        } else if ((kingPosition[0] == 3 && kingPosition[1] == 4) || (kingPosition[0] == 4 && kingPosition[1] == 3)
+                || (kingPosition[0] == 5 && kingPosition[1] == 4) || (kingPosition[0] == 4 && kingPosition[1] == 5)){
+            return 3;
+        } else{
+            return 2;
+        }
     }
 
 }
