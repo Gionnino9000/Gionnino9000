@@ -21,7 +21,7 @@ import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.WhiteHeu
  * 
  * Game engine inspired by the Ashton Rules of Tablut
  *
- * @author A. Piretti, Andrea Galassi (extended by Gionnino9000 Team)
+ * @author A. Piretti, Andrea Galassi (extended by Gionnino9000)
  */
 public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adversarial.Game<State, Action, State.Turn> {
 	public static final int NUM_BLACK = 16;
@@ -424,6 +424,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	private State checkCaptureBlackKingLeft(State state, Action a) {
 		// ho il re sulla sinistra
 		if (a.getColumnTo() > 1 && state.getPawn(a.getRowTo(), a.getColumnTo() - 1).equalsPawn("K")) {
+			//System.out.println("Ho il re sulla sinistra");
 			// re sul trono
 			if (state.getBox(a.getRowTo(), a.getColumnTo() - 1).equals("e5")) {
 				if (state.getPawn(3, 4).equalsPawn("B") && state.getPawn(4, 3).equalsPawn("B")
@@ -475,6 +476,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		// ho il re sulla destra
 		if (a.getColumnTo() < state.getBoard().length - 2
 				&& (state.getPawn(a.getRowTo(), a.getColumnTo() + 1).equalsPawn("K"))) {
+			//System.out.println("Ho il re sulla destra");
 			// re sul trono
 			if (state.getBox(a.getRowTo(), a.getColumnTo() + 1).equals("e5")) {
 				if (state.getPawn(3, 4).equalsPawn("B") && state.getPawn(4, 5).equalsPawn("B")
@@ -526,7 +528,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		// ho il re sotto
 		if (a.getRowTo() < state.getBoard().length - 2
 				&& state.getPawn(a.getRowTo() + 1, a.getColumnTo()).equalsPawn("K")) {
-			System.out.println("Ho il re sotto");
+			//System.out.println("Ho il re sotto");
 			// re sul trono
 			if (state.getBox(a.getRowTo() + 1, a.getColumnTo()).equals("e5")) {
 				if (state.getPawn(5, 4).equalsPawn("B") && state.getPawn(4, 5).equalsPawn("B")
@@ -577,6 +579,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	private State checkCaptureBlackKingUp(State state, Action a) {
 		// ho il re sopra
 		if (a.getRowTo() > 1 && state.getPawn(a.getRowTo() - 1, a.getColumnTo()).equalsPawn("K")) {
+			//System.out.println("Ho il re sopra");
 			// re sul trono
 			if (state.getBox(a.getRowTo() - 1, a.getColumnTo()).equals("e5")) {
 				if (state.getPawn(3, 4).equalsPawn("B") && state.getPawn(4, 5).equalsPawn("B")

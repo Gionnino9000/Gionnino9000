@@ -137,10 +137,11 @@ public abstract class TablutClient implements Runnable {
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public int getTimeout() { return timeout; }
 
 	/**
 	 * Write an action to the server
