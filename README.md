@@ -6,7 +6,7 @@
   
 </div>
 
-### Spiegazione del Nome (Per i Normie dall'Infanzia Decisamente MOLTO Triste)
+### Spiegazione del Nome
 Tablut = Tavoletta<br/>
 Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**<br/>
 Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)<br/>
@@ -42,6 +42,29 @@ Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non 
   ```bash
   sudo apt install ant -y
   ```
+
+### Setup su IntelliJ
+1. Importare la cartella `Tablut/src/` su Intellij (`File` -> `Open`)
+2. Andare su `File` -> `Project Structure` -> `Libraries` e selezionare `+`
+3. Selezionare `Java` e importare la cartella `Tablut/lib`
+
+### Esecuzione
+1. Eseguire `Tablut/src/Server.java`
+
+    Parametri (tutti `int`, tranne `-g`): 
+
+    - `-c,--cache <arg>`          limite alla cache (default: infinito)
+    - `-e,--errors <arg>`         numero di errori (default: 0)
+    - `-g,--enableGUI`            opzione che abilita la GUI
+    - `-r,--game rules <arg>`     versione di Tablut: `1` per Tablut, `2`
+                                for Modern, `3` for Brandub, `4` for Ashton
+                                (default: 4)
+    - `-s,--repeatedState <arg>`  numero di stati ripetuti (default: 0)
+    - `-t,--time <arg>`           numero di secondi (default: 60)
+
+2. Eseguire `Tablut/src/it/unibo/ai/didattica/competition/tablut/gionnino9000/clients/BlackTavoletta.java`
+3. Eseguire `Tablut/src/it/unibo/ai/didattica/competition/tablut/gionnino9000/clients/WhiteTavoletta.java`
+4. Have fun!
 
 ### Memoni Giganti
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/WidePlank.gif"/>
