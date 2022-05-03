@@ -14,6 +14,7 @@ import java.util.logging.SimpleFormatter;
 
 import it.unibo.ai.didattica.competition.tablut.exceptions.*;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.BlackHeuristics;
+import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.BlackHeuristicsKT;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.Heuristics;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.WhiteHeuristics;
 
@@ -1222,7 +1223,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 			return Double.NEGATIVE_INFINITY; // Lose
 
 		// Non-terminal state => get Heuristics for the current state
-		Heuristics heuristics = turn.equals(State.Turn.WHITE) ? new WhiteHeuristics(state) : new BlackHeuristics(state);
+		Heuristics heuristics = turn.equals(State.Turn.WHITE) ? new WhiteHeuristics(state) : new BlackHeuristicsKT(state);
 		return heuristics.evaluateState();
 	}
 
