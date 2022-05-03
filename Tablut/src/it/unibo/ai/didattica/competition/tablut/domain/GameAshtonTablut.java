@@ -14,19 +14,21 @@ import java.util.logging.SimpleFormatter;
 
 import it.unibo.ai.didattica.competition.tablut.exceptions.*;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.BlackHeuristics;
-import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.BlackHeuristicsKT;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.Heuristics;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics.WhiteHeuristics;
 
 /**
- * 
  * Game engine inspired by the Ashton Rules of Tablut
  *
  * @author A. Piretti, Andrea Galassi (extended by Gionnino9000)
  */
 public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adversarial.Game<State, Action, State.Turn> {
-	public static final int NUM_BLACK = 16;
-	public static final int NUM_WHITE = 8;
+	/**
+	 * Initial number of pawns for each player
+	 */
+	public final static int NUM_BLACK = 16;
+	public final static int NUM_WHITE = 8;
+
 	/**
 	 * Number of repeated states that can occur before a draw
 	 */
@@ -36,11 +38,12 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	 * Number of states kept in memory. negative value means infinite.
 	 */
 	private int cache_size;
+
 	/**
 	 * Counter for the moves without capturing that have occurred
 	 */
-
 	private int movesWithutCapturing;
+
 	private String gameLogName;
 	private File gameLog;
 	private FileHandler fh;
@@ -49,13 +52,11 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	// private List<String> strangeCitadels;
 	private List<State> drawConditions;
 
-	public GameAshtonTablut(int repeated_moves_allowed, int cache_size, String logs_folder, String whiteName,
-			String blackName) {
+	public GameAshtonTablut(int repeated_moves_allowed, int cache_size, String logs_folder, String whiteName, String blackName) {
 		this(new StateTablut(), repeated_moves_allowed, cache_size, logs_folder, whiteName, blackName);
 	}
 
-	public GameAshtonTablut(State state, int repeated_moves_allowed, int cache_size, String logs_folder,
-			String whiteName, String blackName) {
+	public GameAshtonTablut(State state, int repeated_moves_allowed, int cache_size, String logs_folder, String whiteName, String blackName) {
 		super();
 		this.repeated_moves_allowed = repeated_moves_allowed;
 		this.cache_size = cache_size;
@@ -80,9 +81,10 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 			System.exit(1);
 		}
 		this.loggGame = Logger.getLogger("GameLog");
+		loggGame.setUseParentHandlers(false);
 		loggGame.addHandler(this.fh);
 		this.fh.setFormatter(new SimpleFormatter());
-		loggGame.setLevel(Level.FINE);
+		loggGame.setLevel(Level.OFF); // By disabling the log we get a boost on performances
 		loggGame.fine("Players:\t" + whiteName + "\tvs\t" + blackName);
 		loggGame.fine("Repeated moves allowed:\t" + repeated_moves_allowed + "\tCache:\t" + cache_size);
 		loggGame.fine("Inizio partita");
@@ -135,217 +137,70 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	public State checkMove(State state, Action action)
 			throws BoardException, ActionException, StopException, PawnException, DiagonalException, ClimbingException,
 			ThroneException, OccupiedException, ClimbingCitadelException, CitadelException {
-		// check isPossibleMove
-		this.loggGame.fine(action.toString());
-		// controllo la mossa
-		if (action.getTo().length() != 2 || action.getFrom().length() != 2) {
-			this.loggGame.warning("Formato mossa errato");
-			throw new ActionException(action);
-		}
-		int columnFrom = action.getColumnFrom();
-		int columnTo = action.getColumnTo();
-		int rowFrom = action.getRowFrom();
-		int rowTo = action.getRowTo();
 
-		// controllo se sono fuori dal tabellone
-		if (columnFrom > state.getBoard().length - 1 || rowFrom > state.getBoard().length - 1
-				|| rowTo > state.getBoard().length - 1 || columnTo > state.getBoard().length - 1 || columnFrom < 0
-				|| rowFrom < 0 || rowTo < 0 || columnTo < 0) {
-			this.loggGame.warning("Mossa fuori tabellone");
-			throw new BoardException(action);
-		}
+		if(isPossibleMove(state,action)) {
 
-		// controllo che non vada sul trono
-		if (state.getPawn(rowTo, columnTo).equalsPawn(State.Pawn.THRONE.toString())) {
-			this.loggGame.warning("Mossa sul trono");
-			throw new ThroneException(action);
-		}
 
-		// controllo la casella di arrivo
-		if (!state.getPawn(rowTo, columnTo).equalsPawn(State.Pawn.EMPTY.toString())) {
-			this.loggGame.warning("Mossa sopra una casella occupata");
-			throw new OccupiedException(action);
-		}
-		if (this.citadels.contains(state.getBox(rowTo, columnTo))
-				&& !this.citadels.contains(state.getBox(rowFrom, columnFrom))) {
-			this.loggGame.warning("Mossa che arriva sopra una citadel");
-			throw new CitadelException(action);
-		}
-		if (this.citadels.contains(state.getBox(rowTo, columnTo))
-				&& this.citadels.contains(state.getBox(rowFrom, columnFrom))) {
-			if (rowFrom == rowTo) {
-				if (columnFrom - columnTo > 5 || columnFrom - columnTo < -5) {
-					this.loggGame.warning("Mossa che arriva sopra una citadel");
-					throw new CitadelException(action);
-				}
-			} else {
-				if (rowFrom - rowTo > 5 || rowFrom - rowTo < -5) {
-					this.loggGame.warning("Mossa che arriva sopra una citadel");
-					throw new CitadelException(action);
-				}
+			// se sono arrivato qui, muovo la pedina
+			state = this.movePawn(state, action);
+
+			// a questo punto controllo lo stato per eventuali catture
+			if (state.getTurn().equalsTurn("W")) {
+				state = this.checkCaptureBlack(state, action);
+			} else if (state.getTurn().equalsTurn("B")) {
+				state = this.checkCaptureWhite(state, action);
 			}
 
-		}
-
-		// controllo se cerco di stare fermo
-		if (rowFrom == rowTo && columnFrom == columnTo) {
-			this.loggGame.warning("Nessuna mossa");
-			throw new StopException(action);
-		}
-
-		// controllo se sto muovendo una pedina giusta
-		if (state.getTurn().equalsTurn(State.Turn.WHITE.toString())) {
-			if (!state.getPawn(rowFrom, columnFrom).equalsPawn("W")
-					&& !state.getPawn(rowFrom, columnFrom).equalsPawn("K")) {
-				this.loggGame.warning("Giocatore " + action.getTurn() + " cerca di muovere una pedina avversaria");
-				throw new PawnException(action);
+			// if something has been captured, clear cache for draws
+			if (this.movesWithutCapturing == 0) {
+				this.drawConditions.clear();
+				this.loggGame.fine("Capture! Draw cache cleared!");
 			}
-		}
-		if (state.getTurn().equalsTurn(State.Turn.BLACK.toString())) {
-			if (!state.getPawn(rowFrom, columnFrom).equalsPawn("B")) {
-				this.loggGame.warning("Giocatore " + action.getTurn() + " cerca di muovere una pedina avversaria");
-				throw new PawnException(action);
-			}
-		}
 
-		// controllo di non muovere in diagonale
-		if (rowFrom != rowTo && columnFrom != columnTo) {
-			this.loggGame.warning("Mossa in diagonale");
-			throw new DiagonalException(action);
-		}
+			// controllo pareggio
+			int trovati = 0;
+			for (State s : drawConditions) {
 
-		// controllo di non scavalcare pedine
-		if (rowFrom == rowTo) {
-			if (columnFrom > columnTo) {
-				for (int i = columnTo; i < columnFrom; i++) {
-					if (!state.getPawn(rowFrom, i).equalsPawn(State.Pawn.EMPTY.toString())) {
-						if (state.getPawn(rowFrom, i).equalsPawn(State.Pawn.THRONE.toString())) {
-							this.loggGame.warning("Mossa che scavalca il trono");
-							throw new ClimbingException(action);
-						} else {
-							this.loggGame.warning("Mossa che scavalca una pedina");
-							throw new ClimbingException(action);
-						}
+				System.out.println(s.toString());
+
+				if (s.equals(state)) {
+					// DEBUG: //
+					// System.out.println("UGUALI:");
+					// System.out.println("STATO VECCHIO:\t" + s.toLinearString());
+					// System.out.println("STATO NUOVO:\t" +
+					// state.toLinearString());
+
+					trovati++;
+					if (trovati > repeated_moves_allowed) {
+						state.setTurn(State.Turn.DRAW);
+						this.loggGame.fine("Partita terminata in pareggio per numero di stati ripetuti");
+						break;
 					}
-					if (this.citadels.contains(state.getBox(rowFrom, i))
-							&& !this.citadels.contains(state.getBox(action.getRowFrom(), action.getColumnFrom()))) {
-						this.loggGame.warning("Mossa che scavalca una citadel");
-						throw new ClimbingCitadelException(action);
-					}
-				}
-			} else {
-				for (int i = columnFrom + 1; i <= columnTo; i++) {
-					if (!state.getPawn(rowFrom, i).equalsPawn(State.Pawn.EMPTY.toString())) {
-						if (state.getPawn(rowFrom, i).equalsPawn(State.Pawn.THRONE.toString())) {
-							this.loggGame.warning("Mossa che scavalca il trono");
-							throw new ClimbingException(action);
-						} else {
-							this.loggGame.warning("Mossa che scavalca una pedina");
-							throw new ClimbingException(action);
-						}
-					}
-					if (this.citadels.contains(state.getBox(rowFrom, i))
-							&& !this.citadels.contains(state.getBox(action.getRowFrom(), action.getColumnFrom()))) {
-						this.loggGame.warning("Mossa che scavalca una citadel");
-						throw new ClimbingCitadelException(action);
-					}
+				} else {
+					// DEBUG: //
+					// System.out.println("DIVERSI:");
+					// System.out.println("STATO VECCHIO:\t" + s.toLinearString());
+					// System.out.println("STATO NUOVO:\t" +
+					// state.toLinearString());
 				}
 			}
-		} else {
-			if (rowFrom > rowTo) {
-				for (int i = rowTo; i < rowFrom; i++) {
-					if (!state.getPawn(i, columnFrom).equalsPawn(State.Pawn.EMPTY.toString())) {
-						if (state.getPawn(i, columnFrom).equalsPawn(State.Pawn.THRONE.toString())) {
-							this.loggGame.warning("Mossa che scavalca il trono");
-							throw new ClimbingException(action);
-						} else {
-							this.loggGame.warning("Mossa che scavalca una pedina");
-							throw new ClimbingException(action);
-						}
-					}
-					if (this.citadels.contains(state.getBox(i, columnFrom))
-							&& !this.citadels.contains(state.getBox(action.getRowFrom(), action.getColumnFrom()))) {
-						this.loggGame.warning("Mossa che scavalca una citadel");
-						throw new ClimbingCitadelException(action);
-					}
-				}
-			} else {
-				for (int i = rowFrom + 1; i <= rowTo; i++) {
-					if (!state.getPawn(i, columnFrom).equalsPawn(State.Pawn.EMPTY.toString())) {
-						if (state.getPawn(i, columnFrom).equalsPawn(State.Pawn.THRONE.toString())) {
-							this.loggGame.warning("Mossa che scavalca il trono");
-							throw new ClimbingException(action);
-						} else {
-							this.loggGame.warning("Mossa che scavalca una pedina");
-							throw new ClimbingException(action);
-						}
-					}
-					if (this.citadels.contains(state.getBox(i, columnFrom))
-							&& !this.citadels.contains(state.getBox(action.getRowFrom(), action.getColumnFrom()))) {
-						this.loggGame.warning("Mossa che scavalca una citadel");
-						throw new ClimbingCitadelException(action);
-					}
-				}
+			if (trovati > 0) {
+				this.loggGame.fine("Equal states found: " + trovati);
 			}
-		}
-
-		// se sono arrivato qui, muovo la pedina
-		state = this.movePawn(state, action);
-
-		// a questo punto controllo lo stato per eventuali catture
-		if (state.getTurn().equalsTurn("W")) {
-			state = this.checkCaptureBlack(state, action);
-		} else if (state.getTurn().equalsTurn("B")) {
-			state = this.checkCaptureWhite(state, action);
-		}
-
-		// if something has been captured, clear cache for draws
-		if (this.movesWithutCapturing == 0) {
-			this.drawConditions.clear();
-			this.loggGame.fine("Capture! Draw cache cleared!");
-		}
-
-		// controllo pareggio
-		int trovati = 0;
-		for (State s : drawConditions) {
-
-			System.out.println(s.toString());
-
-			if (s.equals(state)) {
-				// DEBUG: //
-				// System.out.println("UGUALI:");
-				// System.out.println("STATO VECCHIO:\t" + s.toLinearString());
-				// System.out.println("STATO NUOVO:\t" +
-				// state.toLinearString());
-
-				trovati++;
-				if (trovati > repeated_moves_allowed) {
-					state.setTurn(State.Turn.DRAW);
-					this.loggGame.fine("Partita terminata in pareggio per numero di stati ripetuti");
-					break;
-				}
-			} else {
-				// DEBUG: //
-				// System.out.println("DIVERSI:");
-				// System.out.println("STATO VECCHIO:\t" + s.toLinearString());
-				// System.out.println("STATO NUOVO:\t" +
-				// state.toLinearString());
+			if (cache_size >= 0 && this.drawConditions.size() > cache_size) {
+				this.drawConditions.remove(0);
 			}
-		}
-		if (trovati > 0) {
-			this.loggGame.fine("Equal states found: " + trovati);
-		}
-		if (cache_size >= 0 && this.drawConditions.size() > cache_size) {
-			this.drawConditions.remove(0);
-		}
-		this.drawConditions.add(state.clone());
+			this.drawConditions.add(state.clone());
 
-		this.loggGame.fine("Current draw cache size: " + this.drawConditions.size());
+			this.loggGame.fine("Current draw cache size: " + this.drawConditions.size());
 
-		this.loggGame.fine("Stato:\n" + state.toString());
-		System.out.println("Stato:\n" + state.toString());
+			this.loggGame.fine("Stato:\n" + state.toString());
+			System.out.println("Stato:\n" + state.toString());
 
-		return state;
+			return state;
+		}
+
+		return null;
 	}
 
 	private State checkCaptureWhite(State state, Action a) {
@@ -353,13 +208,13 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		if (a.getColumnTo() < state.getBoard().length - 2
 				&& state.getPawn(a.getRowTo(), a.getColumnTo() + 1).equalsPawn("B")
 				&& (state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("W")
-						|| state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("T")
-						|| state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("K")
-						|| (this.citadels.contains(state.getBox(a.getRowTo(), a.getColumnTo() + 2))
-								&& !(a.getColumnTo() + 2 == 8 && a.getRowTo() == 4)
-								&& !(a.getColumnTo() + 2 == 4 && a.getRowTo() == 0)
-								&& !(a.getColumnTo() + 2 == 4 && a.getRowTo() == 8)
-								&& !(a.getColumnTo() + 2 == 0 && a.getRowTo() == 4)))) {
+				|| state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("T")
+				|| state.getPawn(a.getRowTo(), a.getColumnTo() + 2).equalsPawn("K")
+				|| (this.citadels.contains(state.getBox(a.getRowTo(), a.getColumnTo() + 2))
+				&& !(a.getColumnTo() + 2 == 8 && a.getRowTo() == 4)
+				&& !(a.getColumnTo() + 2 == 4 && a.getRowTo() == 0)
+				&& !(a.getColumnTo() + 2 == 4 && a.getRowTo() == 8)
+				&& !(a.getColumnTo() + 2 == 0 && a.getRowTo() == 4)))) {
 			state.removePawn(a.getRowTo(), a.getColumnTo() + 1);
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina nera rimossa in: " + state.getBox(a.getRowTo(), a.getColumnTo() + 1));
@@ -367,13 +222,13 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		// controllo se mangio a sinistra
 		if (a.getColumnTo() > 1 && state.getPawn(a.getRowTo(), a.getColumnTo() - 1).equalsPawn("B")
 				&& (state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("W")
-						|| state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("T")
-						|| state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("K")
-						|| (this.citadels.contains(state.getBox(a.getRowTo(), a.getColumnTo() - 2))
-								&& !(a.getColumnTo() - 2 == 8 && a.getRowTo() == 4)
-								&& !(a.getColumnTo() - 2 == 4 && a.getRowTo() == 0)
-								&& !(a.getColumnTo() - 2 == 4 && a.getRowTo() == 8)
-								&& !(a.getColumnTo() - 2 == 0 && a.getRowTo() == 4)))) {
+				|| state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("T")
+				|| state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("K")
+				|| (this.citadels.contains(state.getBox(a.getRowTo(), a.getColumnTo() - 2))
+				&& !(a.getColumnTo() - 2 == 8 && a.getRowTo() == 4)
+				&& !(a.getColumnTo() - 2 == 4 && a.getRowTo() == 0)
+				&& !(a.getColumnTo() - 2 == 4 && a.getRowTo() == 8)
+				&& !(a.getColumnTo() - 2 == 0 && a.getRowTo() == 4)))) {
 			state.removePawn(a.getRowTo(), a.getColumnTo() - 1);
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina nera rimossa in: " + state.getBox(a.getRowTo(), a.getColumnTo() - 1));
@@ -381,13 +236,13 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		// controllo se mangio sopra
 		if (a.getRowTo() > 1 && state.getPawn(a.getRowTo() - 1, a.getColumnTo()).equalsPawn("B")
 				&& (state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("W")
-						|| state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("T")
-						|| state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("K")
-						|| (this.citadels.contains(state.getBox(a.getRowTo() - 2, a.getColumnTo()))
-								&& !(a.getColumnTo() == 8 && a.getRowTo() - 2 == 4)
-								&& !(a.getColumnTo() == 4 && a.getRowTo() - 2 == 0)
-								&& !(a.getColumnTo() == 4 && a.getRowTo() - 2 == 8)
-								&& !(a.getColumnTo() == 0 && a.getRowTo() - 2 == 4)))) {
+				|| state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("T")
+				|| state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("K")
+				|| (this.citadels.contains(state.getBox(a.getRowTo() - 2, a.getColumnTo()))
+				&& !(a.getColumnTo() == 8 && a.getRowTo() - 2 == 4)
+				&& !(a.getColumnTo() == 4 && a.getRowTo() - 2 == 0)
+				&& !(a.getColumnTo() == 4 && a.getRowTo() - 2 == 8)
+				&& !(a.getColumnTo() == 0 && a.getRowTo() - 2 == 4)))) {
 			state.removePawn(a.getRowTo() - 1, a.getColumnTo());
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina nera rimossa in: " + state.getBox(a.getRowTo() - 1, a.getColumnTo()));
@@ -396,13 +251,13 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		if (a.getRowTo() < state.getBoard().length - 2
 				&& state.getPawn(a.getRowTo() + 1, a.getColumnTo()).equalsPawn("B")
 				&& (state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("W")
-						|| state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("T")
-						|| state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("K")
-						|| (this.citadels.contains(state.getBox(a.getRowTo() + 2, a.getColumnTo()))
-								&& !(a.getColumnTo() == 8 && a.getRowTo() + 2 == 4)
-								&& !(a.getColumnTo() == 4 && a.getRowTo() + 2 == 0)
-								&& !(a.getColumnTo() == 4 && a.getRowTo() + 2 == 8)
-								&& !(a.getColumnTo() == 0 && a.getRowTo() + 2 == 4)))) {
+				|| state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("T")
+				|| state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("K")
+				|| (this.citadels.contains(state.getBox(a.getRowTo() + 2, a.getColumnTo()))
+				&& !(a.getColumnTo() == 8 && a.getRowTo() + 2 == 4)
+				&& !(a.getColumnTo() == 4 && a.getRowTo() + 2 == 0)
+				&& !(a.getColumnTo() == 4 && a.getRowTo() + 2 == 8)
+				&& !(a.getColumnTo() == 0 && a.getRowTo() + 2 == 4)))) {
 			state.removePawn(a.getRowTo() + 1, a.getColumnTo());
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina nera rimossa in: " + state.getBox(a.getRowTo() + 1, a.getColumnTo()));
@@ -662,9 +517,9 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		// mangio a sinistra
 		if (a.getColumnTo() > 1 && state.getPawn(a.getRowTo(), a.getColumnTo() - 1).equalsPawn("W")
 				&& (state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("B")
-						|| state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("T")
-						|| this.citadels.contains(state.getBox(a.getRowTo(), a.getColumnTo() - 2))
-						|| (state.getBox(a.getRowTo(), a.getColumnTo() - 2).equals("e5")))) {
+				|| state.getPawn(a.getRowTo(), a.getColumnTo() - 2).equalsPawn("T")
+				|| this.citadels.contains(state.getBox(a.getRowTo(), a.getColumnTo() - 2))
+				|| (state.getBox(a.getRowTo(), a.getColumnTo() - 2).equals("e5")))) {
 			state.removePawn(a.getRowTo(), a.getColumnTo() - 1);
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina bianca rimossa in: " + state.getBox(a.getRowTo(), a.getColumnTo() - 1));
@@ -676,9 +531,9 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		// controllo se mangio sopra
 		if (a.getRowTo() > 1 && state.getPawn(a.getRowTo() - 1, a.getColumnTo()).equalsPawn("W")
 				&& (state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("B")
-						|| state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("T")
-						|| this.citadels.contains(state.getBox(a.getRowTo() - 2, a.getColumnTo()))
-						|| (state.getBox(a.getRowTo() - 2, a.getColumnTo()).equals("e5")))) {
+				|| state.getPawn(a.getRowTo() - 2, a.getColumnTo()).equalsPawn("T")
+				|| this.citadels.contains(state.getBox(a.getRowTo() - 2, a.getColumnTo()))
+				|| (state.getBox(a.getRowTo() - 2, a.getColumnTo()).equals("e5")))) {
 			state.removePawn(a.getRowTo() - 1, a.getColumnTo());
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina bianca rimossa in: " + state.getBox(a.getRowTo() - 1, a.getColumnTo()));
@@ -691,9 +546,9 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		if (a.getRowTo() < state.getBoard().length - 2
 				&& state.getPawn(a.getRowTo() + 1, a.getColumnTo()).equalsPawn("W")
 				&& (state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("B")
-						|| state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("T")
-						|| this.citadels.contains(state.getBox(a.getRowTo() + 2, a.getColumnTo()))
-						|| (state.getBox(a.getRowTo() + 2, a.getColumnTo()).equals("e5")))) {
+				|| state.getPawn(a.getRowTo() + 2, a.getColumnTo()).equalsPawn("T")
+				|| this.citadels.contains(state.getBox(a.getRowTo() + 2, a.getColumnTo()))
+				|| (state.getBox(a.getRowTo() + 2, a.getColumnTo()).equals("e5")))) {
 			state.removePawn(a.getRowTo() + 1, a.getColumnTo());
 			this.movesWithutCapturing = -1;
 			this.loggGame.fine("Pedina bianca rimossa in: " + state.getBox(a.getRowTo() + 1, a.getColumnTo()));
@@ -770,12 +625,6 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	public void clearDrawConditions() {
 		drawConditions.clear();
 	}
-	
-
-	@Override
-	public void endGame(State state) {
-		this.loggGame.fine("Stato:\n"+state.toString());
-	}
 
 	/**
 	 * Auxiliary method used to check wheter an action is allowed or not for a given state.
@@ -785,7 +634,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 	 *
 	 * @return			true if the action is allowed, false otherwise.
 	 */
-	public boolean isPossibleMove(State state, Action action)
+	private boolean isPossibleMove(State state, Action action)
 	{
 		this.loggGame.fine(action.toString());
 		// controllo la mossa
@@ -918,31 +767,16 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		return true;
 	}
 
-	// Cloneable Interface methods
 	@Override
-	public GameAshtonTablut clone()
-	{
-		try
-		{
-			GameAshtonTablut clone = (GameAshtonTablut) super.clone();
-			clone.repeated_moves_allowed = this.repeated_moves_allowed;
-			clone.cache_size = this.cache_size;
-			clone.movesWithutCapturing = this.movesWithutCapturing;
-			clone.gameLogName = this.gameLogName;
-			clone.gameLog = this.gameLog;
-			clone.fh = this.fh;
-			clone.loggGame = this.loggGame;
-			clone.citadels = this.citadels;
-			clone.drawConditions = this.drawConditions;
-
-			return clone;
-		} catch (CloneNotSupportedException e)
-		{
-			throw new AssertionError();
-		}
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
 	}
 
-	// aima.core.search.adversarial.Game Interface methods
+	@Override
+	public void endGame(State state) {
+		this.loggGame.fine("Stato:\n"+state.toString());
+	}
+
 	/**
 	 * Get the player who must make the next move
 	 *
@@ -1136,55 +970,6 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 			state = this.checkCaptureWhite(state, action);
 		}
 
-
-		/*
-		// If something has been captured, clear cache for draws
-		if (this.movesWithutCapturing == 0)
-		{
-			this.drawConditions.clear();
-			this.loggGame.fine("Capture! Draw cache cleared!");
-		}
-
-		// Check draw
-		int found = 0;
-		for (State s : drawConditions)
-		{
-			if (s.equals(state))
-			{
-
-				found++;
-				if (found > repeated_moves_allowed)
-				{
-					state.setTurn(State.Turn.DRAW);
-					this.loggGame.fine("Partita terminata in pareggio per numero di stati ripetuti");
-					break;
-				}
-			}
-			else
-			{
-				// DEBUG: //
-				// System.out.println("DIVERSI:");
-				// System.out.println("STATO VECCHIO:\t" + s.toLinearString());
-				// System.out.println("STATO NUOVO:\t" +
-				// state.toLinearString());
-			}
-		}
-		if (found > 0)
-		{
-			this.loggGame.fine("Equal states found: " + found);
-		}
-		if (cache_size >= 0 && this.drawConditions.size() > cache_size)
-		{
-			this.drawConditions.remove(0);
-		}
-		this.drawConditions.add(state.clone());
-
-		this.loggGame.fine("Current draw cache size: " + this.drawConditions.size());
-
-		this.loggGame.fine("Stato:\n" + state.toString());
-		//System.out.println("Stato:\n" + state.toString());
-		*/
-
 		return state;
 	}
 
@@ -1223,7 +1008,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 			return Double.NEGATIVE_INFINITY; // Lose
 
 		// Non-terminal state => get Heuristics for the current state
-		Heuristics heuristics = turn.equals(State.Turn.WHITE) ? new WhiteHeuristics(state) : new BlackHeuristicsKT(state);
+		Heuristics heuristics = turn.equals(State.Turn.WHITE) ? new WhiteHeuristics(state) : new BlackHeuristics(state);
 		return heuristics.evaluateState();
 	}
 
@@ -1234,7 +1019,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		return null;
 	}
 
-	/* Not used in AlphaBetaSearch*/
+	/* Not used in AlphaBetaSearch */
 	@Override
 	public State.Turn[] getPlayers()
 	{
