@@ -55,7 +55,7 @@ public class BlackHeuristics extends Heuristics{
         boolean lateGame = false;
 
         int numbOfWhite = state.getNumberOf(State.Pawn.WHITE);
-        if (numbOfWhite < 4)
+        if (numbOfWhite <= 4)
             lateGame = true;
 
         // Values for the weighted sum

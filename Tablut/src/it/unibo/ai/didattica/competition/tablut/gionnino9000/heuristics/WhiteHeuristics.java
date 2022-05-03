@@ -16,9 +16,6 @@ public class WhiteHeuristics extends Heuristics{
     // Flag to enable console print
     private boolean print = false;
 
-    // Numb. tiles in rhombus
-    private final int BEST_TILES_NUMB = 4;
-
     // Weights for evaluation in the following order: WhiteAlive, BlackEaten, BlackSurroundingKing, BestTiles, NumKingEscapes, KingProtection
     private final Double[] earlyGameWeights;
     private final Double[] lateGameWeights;
@@ -54,7 +51,7 @@ public class WhiteHeuristics extends Heuristics{
         // Values for the weighted sum
         double numberOfWhiteAlive = (double)  state.getNumberOf(State.Pawn.WHITE) / GameAshtonTablut.NUM_WHITE;
         double numberOfBlackEaten = (double)  (GameAshtonTablut.NUM_BLACK - numbOfBlack) / GameAshtonTablut.NUM_BLACK;
-        // brainmates tf ? => double blackSurroundKing = (double)(getNumEatenPositions(state) - checkNearPawns(state, kingPosition(state),State.Turn.BLACK.toString())) / getNumEatenPositions(state);
+        // brainmates tf ? => double blackSurroundKing = (double)(getNumEatenPositions(state) - checkNearPawns(state, kingPosition(state),State.Turn.BLACK.toString())) / getNumEatenPos itions(state);
         double blackPawnsNearKing = (double) checkAdjacentPawns(state, kingPosition(state), State.Turn.BLACK.toString()) / getNumbToEatKing(state);
         double kingProtection = getKingProtection();
 
