@@ -40,7 +40,7 @@ public class TavolettaSearch extends IterativeDeepeningAlphaBetaSearch<State, Ac
     }
 
     /**
-     * Method controlling the search. It is based on iterative deepening and tries to make to a good decision in limited time.
+     * Method controlling the search. It is based on minmax with iterative deepening and tries to make to a good decision in limited time.
      * It is overrided to print metrics.
      *
      * @param state the current state
