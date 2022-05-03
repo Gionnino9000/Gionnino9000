@@ -13,7 +13,7 @@ public abstract class Heuristics {
         this.state = state;
     }
 
-    public double evaluateState(){
+    public double evaluateState() {
         return 0;
     }
 
@@ -123,11 +123,11 @@ public abstract class Heuristics {
      * @return number of escapes which king can reach
      */
     public int countKingEscapes(State state){
-        int[] kingPosition=this.kingPosition(state);
+        int[] kingPosition = this.kingPosition(state);
         int col = 0;
         int row = 0;
 
-        if (!isKingOnCenter(state,kingPosition)) {
+        if (!isKingOnCenter(state, kingPosition)) {
             if ((!(kingPosition[1] > 2 && kingPosition[1] < 6)) && (!(kingPosition[0] > 2 && kingPosition[0] < 6))) {
                 col = countFreeColumn(state, kingPosition);
                 row = countFreeRow(state,kingPosition);
