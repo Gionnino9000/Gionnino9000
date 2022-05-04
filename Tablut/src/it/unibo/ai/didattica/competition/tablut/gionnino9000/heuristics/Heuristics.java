@@ -409,19 +409,19 @@ public abstract class Heuristics {
             if (checkAdjacentPawns(state, position, enemy.toString()) == (needed - 1)) {
                 int[] space = new int[]{position[0]-1,position[1]};
                 if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
-                    return horizzontalInvader(space, enemy);
+                    return verticalInvader(space, enemy);
 
                 space[0] = position[0] + 1;
                 if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
-                    return horizzontalInvader(space, enemy);
+                    return verticalInvader(space, enemy);
 
                 space[0] = position[0];
                 space[1] = position[1] - 1;
                 if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
-                    return verticalInvader(space, enemy);
+                    return horizzontalInvader(space, enemy);
 
                 space[1] = position[1] + 1;
-                return verticalInvader(space, enemy);
+                return horizzontalInvader(space, enemy);
             }
         }
 

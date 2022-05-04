@@ -3,6 +3,8 @@ package it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics;
 import it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
+import java.util.Arrays;
+
 public class WhiteHeuristics extends Heuristics{
 
     private final int WHITE_ALIVE = 0;
@@ -11,7 +13,9 @@ public class WhiteHeuristics extends Heuristics{
     private final int N_KING_ESCAPES = 3;
     private final int KING_PROTECTION = 4;
 
-    // ADD (?): King captured eval (LOSS), King escaped eval (WIN)
+    // Weighs
+    private final double SAFE_PAWN_W = .0;
+
 
     // Flag to enable console print
     private boolean print = false;
@@ -85,6 +89,21 @@ public class WhiteHeuristics extends Heuristics{
         }
 
         return stateValue;
+    }
+
+    private double getPawnsSafety() {
+        int safe = 0;
+
+        State.Pawn[][] board = state.getBoard();
+        for (int i = 0; i < board[i].length; i++) {
+            for (int j = 0; j < board[j].length; j++) {
+                if (board[i][j].equalsPawn(State.Pawn.WHITE.toString())) {
+                    safe += canBeCaptured(state, new int[]{i, j}, State.Pawn.WHITE) ? 0 : 1;
+                }
+            }
+        }
+
+        return (double) safe * SAFE_PAWN_W;
     }
 
     private double getKingProtection() {
