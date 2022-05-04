@@ -1,4 +1,4 @@
-package it.unibo.ai.didattica.competition.tablut.gionnino9000.minmax;
+package it.unibo.ai.didattica.competition.tablut.gionnino9000.search;
 
 import aima.core.search.adversarial.Game;
 import aima.core.search.adversarial.IterativeDeepeningAlphaBetaSearch;

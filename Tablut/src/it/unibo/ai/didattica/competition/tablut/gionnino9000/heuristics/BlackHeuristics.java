@@ -37,9 +37,9 @@ public class BlackHeuristics extends Heuristics {
         super(state);
 
         earlyGameWeights = new Double[4];
-        earlyGameWeights[WHITE_EATEN] = 55.0;
+        earlyGameWeights[WHITE_EATEN] = 50.0;
         earlyGameWeights[BLACK_ALIVE] = 35.0;
-        earlyGameWeights[BLACK_SUR_K] = 5.0;
+        earlyGameWeights[BLACK_SUR_K] = 10.0;
         earlyGameWeights[RHOMBUS_POS] = 5.0;
 
         lateGameWeights = new Double[4];
@@ -72,7 +72,7 @@ public class BlackHeuristics extends Heuristics {
             System.out.println("Number of white pawns eaten: " + numberOfWhiteEaten);
         }
 
-        if (!lateGame) {
+        if (!lateGame) { // Early Game
             double pawnsInRhombus = (double) getRhombusValue() / TILES_IN_RHOMBUS;
 
             stateValue += numberOfWhiteEaten * earlyGameWeights[WHITE_EATEN];
@@ -84,7 +84,7 @@ public class BlackHeuristics extends Heuristics {
                 System.out.println("Number on rhombus pos: " + pawnsInRhombus);
                 System.out.println("|EARLY_GAME|: value is " + stateValue);
             }
-        } else {
+        } else { // Late Game
             double blockingPawns = (double) blockingPawns();
 
             stateValue += numberOfWhiteEaten * lateGameWeights[WHITE_EATEN];
