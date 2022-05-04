@@ -110,7 +110,7 @@ public class Tavoletta extends TablutClient {
 
     @Override
     public void run() {
-        GOGionninoDoTheMagicAndShine();
+        GOTavolettaDoTheMagicAndShine();
 
         // send marvelous name to the server
         try {
@@ -214,7 +214,7 @@ public class Tavoletta extends TablutClient {
         return search.makeDecision(state);
     }
 
-    private static void GOGionninoDoTheMagicAndShine() {
+    private static void GOTavolettaDoTheMagicAndShine() {
         if (System.getProperty("os.name").toLowerCase().contains("windows") ||
                 (System.console() != null && System.getenv().get("TERM") != null)) // Check if terminal supports ANSI escape codes (doesn't work on Windows)
         {
