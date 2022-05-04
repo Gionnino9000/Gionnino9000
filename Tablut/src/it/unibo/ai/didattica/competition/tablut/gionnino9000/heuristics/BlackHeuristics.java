@@ -3,7 +3,10 @@ package it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics;
 import it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
-public class BlackHeuristics extends Heuristics{
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class BlackHeuristics extends Heuristics {
 
     private final int WHITE_EATEN = 0;
     private final int BLACK_ALIVE = 1;
