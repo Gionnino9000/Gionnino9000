@@ -6,6 +6,7 @@ import it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 import it.unibo.ai.didattica.competition.tablut.domain.StateTablut;
 import it.unibo.ai.didattica.competition.tablut.gionnino9000.search.TavolettaSearch;
+import it.unibo.ai.didattica.competition.tablut.gionnino9000.search.TavolettaMCTS;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -209,9 +210,13 @@ public class Tavoletta extends TablutClient {
     }
 
     private Action findBestMove(GameAshtonTablut tablutGame, State state) {
+
         TavolettaSearch search = new TavolettaSearch(tablutGame, Double.MIN_VALUE, Double.MAX_VALUE, super.getTimeout() - 2);
         search.setLogEnabled(debug);
         return search.makeDecision(state);
+
+        //TavolettaMCTS search = new TavolettaMCTS(tablutGame, 5);
+        //return search.makeDecision(state);
     }
 
     private static void GOTavolettaDoTheMagicAndShine() {
