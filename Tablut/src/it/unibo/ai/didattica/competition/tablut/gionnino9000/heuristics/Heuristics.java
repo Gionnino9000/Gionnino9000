@@ -469,33 +469,32 @@ public abstract class Heuristics {
         int[] targetPos = new int[2];
         int[] checkPos = new int[2];
 
-        // upside
-        if (position[0] != 0) {
-            targetPos[0] = position[0] - 1;
-            targetPos[1] = position[1];
+        if (position[0] == 0 || position[0] == 8)
+            return false;
 
-            if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
-                    (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
-                checkPos[0] = position[0] + 1;
-                checkPos[1] = position[1];
-                if (!isPositionOccupied(state, checkPos) && (checkLeftSide(state, enemy, checkPos) || checkRightSide(state, enemy, checkPos))) {
-                    return true;
-                }
+        // upside
+        targetPos[0] = position[0] - 1;
+        targetPos[1] = position[1];
+
+        if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
+                (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
+            checkPos[0] = position[0] + 1;
+            checkPos[1] = position[1];
+            if (!isPositionOccupied(state, checkPos) && (checkLeftSide(state, enemy, checkPos) || checkRightSide(state, enemy, checkPos))) {
+                return true;
             }
         }
 
         // downside
-        if (position[0] != 8) {
-            targetPos[0] = position[0] + 1;
-            targetPos[1] = position[1];
+        targetPos[0] = position[0] + 1;
+        targetPos[1] = position[1];
 
-            if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
-                    (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
-                checkPos[0] = position[0] - 1;
-                checkPos[1] = position[1];
-                if (!isPositionOccupied(state, checkPos) && (checkLeftSide(state, enemy, checkPos) || checkRightSide(state, enemy, checkPos))) {
-                    return true;
-                }
+        if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
+                (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
+            checkPos[0] = position[0] - 1;
+            checkPos[1] = position[1];
+            if (!isPositionOccupied(state, checkPos) && (checkLeftSide(state, enemy, checkPos) || checkRightSide(state, enemy, checkPos))) {
+                return true;
             }
         }
 
@@ -509,33 +508,31 @@ public abstract class Heuristics {
         int[] targetPos = new int[2];
         int[] checkPos = new int[2];
 
-        // left side
-        if (position[1] != 0) {
-            targetPos[0] = position[0];
-            targetPos[1] = position[1] - 1;
+        if (position[1] == 0 || position[1] == 8)
+            return false;
+        // left side present
+        targetPos[0] = position[0];
+        targetPos[1] = position[1] - 1;
 
-            if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
-                    (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
-                checkPos[0] = position[0];
-                checkPos[1] = position[1] + 1;
-                if (!isPositionOccupied(state, checkPos) && (checkUpside(state, enemy, checkPos) || checkDownside(state, enemy, checkPos))) {
-                    return true;
-                }
+        if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
+                (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
+            checkPos[0] = position[0];
+            checkPos[1] = position[1] + 1;
+            if (!isPositionOccupied(state, checkPos) && (checkUpside(state, enemy, checkPos) || checkDownside(state, enemy, checkPos))) {
+                return true;
             }
         }
 
-        // right side
-        if (position[1] != 8) {
-            targetPos[0] = position[0];
-            targetPos[1] = position[1] + 1;
+        // right side present
+        targetPos[0] = position[0];
+        targetPos[1] = position[1] + 1;
 
-            if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
-                    (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
-                checkPos[0] = position[0];
-                checkPos[1] = position[1] - 1;
-                if (!isPositionOccupied(state, checkPos) && (checkUpside(state, enemy, checkPos) || checkDownside(state, enemy, checkPos))) {
-                    return true;
-                }
+        if (Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, targetPos)) ||
+                (isPositionOccupied(state, targetPos) && state.getPawn(targetPos[0], targetPos[1]).equalsPawn(enemy.toString()))) {
+            checkPos[0] = position[0];
+            checkPos[1] = position[1] - 1;
+            if (!isPositionOccupied(state, checkPos) && (checkUpside(state, enemy, checkPos) || checkDownside(state, enemy, checkPos))) {
+                return true;
             }
         }
 

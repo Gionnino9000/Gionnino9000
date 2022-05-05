@@ -89,8 +89,8 @@ public class WhiteHeuristics extends Heuristics{
         int safe = 0;
 
         State.Pawn[][] board = state.getBoard();
-        for (int i = 0; i < board[i].length; i++) {
-            for (int j = 0; j < board[j].length; j++) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j].equalsPawn(State.Pawn.WHITE.toString())) {
                     safe += canBeCaptured(state, new int[]{i, j}, State.Pawn.WHITE) ? 0 : 1;
                 }
