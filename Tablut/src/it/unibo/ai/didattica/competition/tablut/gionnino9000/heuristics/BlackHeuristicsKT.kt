@@ -78,6 +78,7 @@ class BlackHeuristicsKT(state: State?) : Heuristics(state) {
                 println("|EARLY_GAME|: value is $stateValue")
             }
         } else {
+            /*
             val blockingPawns = blockingPawns().toDouble()
             stateValue += numberOfWhiteEaten * lateGameWeights[WHITE_EATEN]!!
             stateValue += numberOfBlackAlive * lateGameWeights[BLACK_ALIVE]!!
@@ -87,6 +88,8 @@ class BlackHeuristicsKT(state: State?) : Heuristics(state) {
                 println("Blocking pawns: $blockingPawns")
                 println("|LATE_GAME|: value is $stateValue")
             }
+            */
+
         }
         return stateValue
     }
@@ -114,10 +117,12 @@ class BlackHeuristicsKT(state: State?) : Heuristics(state) {
         return count
     }
 
+    /*
     /**
      * @return Number of pawns blocking king escape
      */
     fun blockingPawns(): Int {
         return 4 - countKingEscapes(state)
     }
+    */
 }

@@ -5,7 +5,6 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 
 public abstract class Heuristics {
@@ -18,7 +17,7 @@ public abstract class Heuristics {
                                {1,4},
 
             {3,0},                                 {3,8},
-            {4,0}, {4,1},                   {4,7}, {4,8},
+            {4,0}, {4,1},      {4,4},       {4,7}, {4,8},
             {5,0},                                 {5,8},
 
                                {7,4},
@@ -64,7 +63,7 @@ public abstract class Heuristics {
     /**
      * @return the number of adjacent pawns that are target(BLACK, WHITE or King)
      */
-    public int checkAdjacentPawns(State state, int[] pos, String target){
+    public int checkAdjacentPawns(State state, int[] pos, String target) {
         int count = 0;
 
         State.Pawn[][] board = state.getBoard();
@@ -76,6 +75,34 @@ public abstract class Heuristics {
             count++;
         if (board[pos[0]][pos[1]+1].equalsPawn(target))
             count++;
+        return count;
+    }
+
+    /**
+     * @return the number of adjacent squares the king can move in
+     */
+    public int getKingMovement(State state, int[] pos) {
+        int count = 4;
+
+        State.Pawn[][] board = state.getBoard();
+
+        int[] space = new int[]{pos[0]-1,pos[1]};
+        // vertical checks
+        if (isPositionOccupied(state, space) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, space)))
+            count--;
+        space[0] = pos[0] + 1;
+        if (isPositionOccupied(state, space) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, space)))
+            count--;
+
+        // horizontal checks
+        space[0] = pos[0];
+        space[1] = pos[1] - 1;
+        if (isPositionOccupied(state, space) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, space)))
+            count--;
+        space[1] = pos[1] + 1;
+        if (isPositionOccupied(state, space) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, space)))
+            count--;
+
         return count;
     }
 
@@ -130,67 +157,66 @@ public abstract class Heuristics {
     /**
      * @return true if king is adjacent
      */
-    protected boolean checkAdjacentKing(State state, int[] position){
+    protected boolean checkAdjacentKing(State state, int[] position) {
         return checkAdjacentPawns(state, position, "K") > 0;
     }
-
-
-    /**
-     * @return true if king is on an escape tile
-     */
-    public boolean hasKingEscaped(){
-        int[] posKing = kingPosition(state);
-        return posKing[0] == 0 || posKing[0] == 8 || posKing[1] == 0 || posKing[1] == 8;
-    }
-
 
     /**
      * @return true if king is on a center tile
      */
-    public boolean isKingOnCenter(State state,int[] kingPosition){
+    public boolean isKingOnCenter(State state,int[] kingPosition) {
         return (kingPosition[0] > 2 && kingPosition[0] < 6 && kingPosition[1] > 2 && kingPosition[1] < 6);
     }
 
     /**
-     * @return number of escapes which king can reach
+     * @return the escapes which king can reach in the following order [ up, down, left, right ]
      */
-    public int countKingEscapes(State state){
-        int[] kingPosition = this.kingPosition(state);
-        int col = 0;
-        int row = 0;
+    public int[] getKingEscapes(State state, int[] kingPosition) {
+        int[] escapes = new int[4];
 
         if (!isKingOnCenter(state, kingPosition)) {
             if ((!(kingPosition[1] > 2 && kingPosition[1] < 6)) && (!(kingPosition[0] > 2 && kingPosition[0] < 6))) {
-                col = countFreeColumn(state, kingPosition);
-                row = countFreeRow(state,kingPosition);
+                int[] tempV = countFreeColumn(state, kingPosition);
+                int[] tempH = countFreeRow(state, kingPosition);
+                escapes[0] = tempV[0];
+                escapes[1] = tempV[1];
+                escapes[2] = tempH[0];
+                escapes[3] = tempH[1];
             }
             if ((kingPosition[1] > 2 && kingPosition[1] < 6)) {
-                row = countFreeRow(state, kingPosition);
+                int[] tempH = countFreeRow(state, kingPosition);
+                escapes[2] = tempH[0];
+                escapes[3] = tempH[1];
             }
             if ((kingPosition[0] > 2 && kingPosition[0] < 6)) {
-                col = countFreeColumn(state, kingPosition);
+                int[] tempV = countFreeColumn(state, kingPosition);
+                escapes[0] = tempV[0];
+                escapes[1] = tempV[1];
             }
-            return (col + row);
+            return escapes;
         }
 
-        return 0;
+        return escapes;
     }
 
     /**
-     * @return number of free rows from given position
+     * @return free rows from given position [ left, right ]
      */
-    public int countFreeRow(State state, int[] position) {
+    public int[] countFreeRow(State state, int[] position) {
         int row = position[0];
         int column = position[1];
         int[] currentPosition = new int[2];
-        int freeWays = 2;
+        int[] freeWays = new int[2];
+
+        freeWays[0] = 1;
+        freeWays[1] = 1;
 
         currentPosition[0] = row;
         // left side
         for (int i = column-1; i >= 0; i--) {
             currentPosition[1] = i;
-            if (isPositionOccupied(state,currentPosition)){
-                freeWays--;
+            if (isPositionOccupied(state, currentPosition) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, currentPosition))){
+                freeWays[0] = 0;
                 break;
             }
         }
@@ -198,8 +224,8 @@ public abstract class Heuristics {
         // right side
         for (int i = column+1; i <= 8; i++) {
             currentPosition[1] = i;
-            if (isPositionOccupied(state, currentPosition)) {
-                freeWays--;
+            if (isPositionOccupied(state, currentPosition) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, currentPosition))) {
+                freeWays[1] = 0;
                 break;
             }
         }
@@ -208,29 +234,32 @@ public abstract class Heuristics {
     }
 
     /**
-     * @return number of free columns from given position
+     * @return number of free columns from given position [ up, down ]
      */
-    public int countFreeColumn(State state,int[] position){
+    public int[] countFreeColumn(State state,int[] position){
         int row = position[0];
         int column = position[1];
         int[] currentPosition = new int[2];
-        int freeWays = 2;
+        int[] freeWays = new int[2];
+
+        freeWays[0] = 1;
+        freeWays[1] = 1;
 
         currentPosition[1]=column;
-        // downside
-        for(int i=row+1;i<=8;i++) {
+        // upside
+        for(int i=row-1; i>=0; i--) {
             currentPosition[0]=i;
-            if (isPositionOccupied(state,currentPosition)) {
-                freeWays--;
+            if (isPositionOccupied(state, currentPosition) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, currentPosition))){
+                freeWays[0] = 0;
                 break;
             }
         }
 
-        // upside
-        for(int i=row-1;i>=0;i--) {
+        // downside
+        for(int i=row+1; i<=8; i++) {
             currentPosition[0]=i;
-            if (isPositionOccupied(state,currentPosition)){
-                freeWays--;
+            if (isPositionOccupied(state, currentPosition) || Arrays.stream(camps).anyMatch(camp -> Arrays.equals(camp, currentPosition))) {
+                freeWays[1] = 0;
                 break;
             }
         }
@@ -263,6 +292,9 @@ public abstract class Heuristics {
         }
     }
 
+    /**
+     * @return number of Target pawns in given quadrant
+     */
     public int getEnemyCount(State state, State.Pawn target, int quadrant) {
         int[] rowRange = new int[2];
         int[] columnRange = new int[2];
@@ -312,9 +344,7 @@ public abstract class Heuristics {
                 return false;
             if ((position[1] == 1 || position[1] == 7) && i == 4)
                 return false;
-
         }
-
         return false;
     }
 
@@ -336,9 +366,7 @@ public abstract class Heuristics {
                 return false;
             if ((position[1] == 1 || position[1] == 7) && i == 4)
                 return false;
-
         }
-
         return false;
     }
 
@@ -360,9 +388,7 @@ public abstract class Heuristics {
                 return false;
             if ((position[0] == 1 || position[0] == 7) && i == 4)
                 return false;
-
         }
-
         return false;
     }
 
@@ -384,9 +410,7 @@ public abstract class Heuristics {
                 return false;
             if ((position[0] == 1 || position[0] == 7) && i == 4)
                 return false;
-
         }
-
         return false;
     }
 
@@ -403,37 +427,45 @@ public abstract class Heuristics {
 
         State.Pawn enemy = (pawn.equalsPawn(State.Pawn.WHITE.toString()) || pawn.equalsPawn(State.Pawn.KING.toString())) ? State.Pawn.BLACK : State.Pawn.WHITE;
 
+        // if is king and on center we have special cases
         if (pawn.equalsPawn(State.Pawn.KING.toString()) && isKingOnCenter(state, position)) {
             int needed = getNumbToEatKing(state);
 
+            // if king is in danger (1 more enemy pawn to kill)
             if (checkAdjacentPawns(state, position, enemy.toString()) == (needed - 1)) {
+                // search for empty space
                 int[] space = new int[]{position[0]-1,position[1]};
-                if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
-                    return verticalInvader(space, enemy);
 
+                // vertical checks
+                if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
+                    return (checkLeftSide(state, enemy, space) || checkRightSide(state, enemy, space));
                 space[0] = position[0] + 1;
                 if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
-                    return verticalInvader(space, enemy);
+                    return (checkLeftSide(state, enemy, space) || checkRightSide(state, enemy, space));
 
+                // horizontal checks
                 space[0] = position[0];
                 space[1] = position[1] - 1;
                 if (isPositionOccupied(state, space) && space[0] != 4 && space[1] != 4)
-                    return horizzontalInvader(space, enemy);
-
+                    return (checkUpside(state, enemy, space) || checkDownside(state, enemy, space));
                 space[1] = position[1] + 1;
-                return horizzontalInvader(space, enemy);
+                return (checkUpside(state, enemy, space) || checkDownside(state, enemy, space));
             }
+            else return false;
         }
 
-        if (verticalInvader(position, enemy))
+        if (verticalCapturePossible(position, enemy))
             return true;
-        if (horizzontalInvader(position, enemy))
+        if (horizontalCapturePossible(position, enemy))
             return true;
 
         return false;
     }
 
-    private boolean verticalInvader (int[] position, State.Pawn enemy) {
+    /**
+     * @return true if an Enemy pawn can capture a pawn in given Position vertically
+     */
+    private boolean verticalCapturePossible (int[] position, State.Pawn enemy) {
         int[] targetPos = new int[2];
         int[] checkPos = new int[2];
 
@@ -470,7 +502,10 @@ public abstract class Heuristics {
         return false;
     }
 
-    private boolean horizzontalInvader (int[] position, State.Pawn enemy) {
+    /**
+     * @return true if an Enemy pawn can capture a pawn in given Position horizontally
+     */
+    private boolean horizontalCapturePossible(int[] position, State.Pawn enemy) {
         int[] targetPos = new int[2];
         int[] checkPos = new int[2];
 

@@ -3,7 +3,6 @@ package it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics;
 import it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class BlackHeuristics extends Heuristics {
@@ -92,6 +91,8 @@ public class BlackHeuristics extends Heuristics {
             stateValue += surroundKing * lateGameWeights[BLACK_SUR_K];
             stateValue += blockingPawns * lateGameWeights[BLOCKED_ESC];
 
+            stateValue += canCaptureKing();
+
             if (print) {
                 System.out.println("Blocking pawns: " + blockingPawns);
                 System.out.println("|LATE_GAME|: value is " + stateValue);
@@ -130,7 +131,18 @@ public class BlackHeuristics extends Heuristics {
      * @return Number of pawns blocking king escape
      */
     public int blockingPawns() {
-        return 4 - countKingEscapes(state);
+        return 4 - Arrays.stream(getKingEscapes(state, kingPosition(state))).sum();
     }
 
+    /**
+     * @return Adds value to the position if we create win threats
+     */
+    private double canCaptureKing() {
+        if (canBeCaptured(state, kingPosition(state), State.Pawn.KING))
+            return +10.0;
+
+        return 0.0;
+    }
+
+    // add pawn per quadrant distribution evaluation
 }
