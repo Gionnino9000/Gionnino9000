@@ -107,7 +107,7 @@ public class WhiteHeuristics extends Heuristics{
         int[] escapes = getKingEscapes(state, kPos);
         int numEsc = Arrays.stream(escapes).sum();
         if (numEsc > 1)
-            return (double) numEsc * 20.0;
+            return (double) Double.POSITIVE_INFINITY;
         // in case we have one escape only we check whether an enemy can block escape
         else if (numEsc == 1) {
             // up escape
