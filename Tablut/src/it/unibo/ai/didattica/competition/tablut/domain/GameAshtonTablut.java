@@ -56,7 +56,8 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		this(new StateTablut(), repeated_moves_allowed, cache_size, logs_folder, whiteName, blackName);
 	}
 
-	public GameAshtonTablut(State state, int repeated_moves_allowed, int cache_size, String logs_folder, String whiteName, String blackName) {
+	public GameAshtonTablut(State state, int repeated_moves_allowed, int cache_size, String logs_folder,
+							String whiteName, String blackName) {
 		super();
 		this.repeated_moves_allowed = repeated_moves_allowed;
 		this.cache_size = cache_size;
@@ -84,7 +85,7 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		loggGame.setUseParentHandlers(false);
 		loggGame.addHandler(this.fh);
 		this.fh.setFormatter(new SimpleFormatter());
-		loggGame.setLevel(Level.OFF); // By disabling the log we get a boost on performances
+		loggGame.setLevel(Level.OFF);
 		loggGame.fine("Players:\t" + whiteName + "\tvs\t" + blackName);
 		loggGame.fine("Repeated moves allowed:\t" + repeated_moves_allowed + "\tCache:\t" + cache_size);
 		loggGame.fine("Inizio partita");
@@ -139,7 +140,6 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 			ThroneException, OccupiedException, ClimbingCitadelException, CitadelException {
 
 		if(isPossibleMove(state,action)) {
-
 
 			// se sono arrivato qui, muovo la pedina
 			state = this.movePawn(state, action);
@@ -626,6 +626,8 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		drawConditions.clear();
 	}
 
+/////////////////////////////////////////////////////////////////////////////////////
+
 	/**
 	 * Auxiliary method used to check wheter an action is allowed or not for a given state.
 	 *
@@ -767,6 +769,8 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		return true;
 	}
 
+/////////////////////////////////////////////////////////////////////////////////////
+
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		return super.clone();
@@ -804,52 +808,19 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 		List<Action> possibleActions = new ArrayList<Action>();
 
 		// Loop through rows
-		for(int i = 0; i < state.getBoard().length; i++)
+		for (int i = 0; i < state.getBoard().length; i++)
 		{
 			// Loop through columns
-			for(int j = 0; j < state.getBoard().length; j++)
+			for (int j = 0; j < state.getBoard().length; j++)
 			{
 				State.Pawn p = state.getPawn(i, j);
 
-				// The pawn in this box belongs to the player that must make the next move
-				if(p.toString().equals(turn.toString()) ||
-						(p.equals(State.Pawn.KING) && turn.toString().equals(State.Turn.WHITE)))
+				// If pawn color  is equal of turn color
+				if (p.toString().equals(turn.toString())
+						|| (p.equals(State.Pawn.KING) && turn.equals(State.Turn.WHITE)))
 				{
-					// Search on top of pawn (#row - 1)
-					for(int k = i - 1; k >= 0; k--)
-					{
-						// Break if pawn is out of citadels, and it's moving on a citadel
-						if (!citadels.contains(state.getBox(i, j)) && citadels.contains(state.getBox(k, j)))
-						{
-							break;
-						}
-						// Check if we are moving on an empty cell
-						else if (state.getPawn(k, j).equalsPawn(State.Pawn.EMPTY.toString()))
-						{
-							String from = state.getBox(i, j);
-							String to = state.getBox(k, j);
-
-							Action action = null;
-
-							try {
-								action = new Action(from, to, turn);
-								// If the action is allowed, add it to the list
-								if (isPossibleMove(state.clone(), action))
-									possibleActions.add(action);
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
-						}
-						// There is a pawn in the same column, and it cannot be crossed
-						else
-						{
-							break;
-						}
-					}
-
-					// Search on bottom of pawn (#row + 1)
-					for (int k = i + 1; k < state.getBoard().length; k++)
-					{
+					// Search on top of pawn
+					for (int k = i-1; k >= 0; k--) {
 						// Break if pawn is out of citadels, and it is moving on a citadel
 						if (!citadels.contains(state.getBox(i, j)) && citadels.contains(state.getBox(k, j)))
 						{
@@ -864,54 +835,47 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 							Action action = null;
 							try {
 								action = new Action(from, to, turn);
-								// If the action is allowed, add it to the list
-								if (isPossibleMove(state.clone(), action))
-									possibleActions.add(action);
 							} catch (IOException e) {
 								e.printStackTrace();
 							}
-						}
-						// There is a pawn in the same column, and it cannot be crossed
-						else
-						{
-							break;
-						}
+
+							// Check if action is admissible and if it is, add it to list possibleActions
+							if(isPossibleMove(state.clone(), action))
+								possibleActions.add(action);
+
+						} else break; // There is a pawn in the same column, and it cannot be crossed
 					}
 
-					// Search on left of pawn (#column - 1)
-					for (int k = j - 1; k >= 0; k--)
+					// Search on bottom of pawn
+					for (int k = i+1; k < state.getBoard().length; k++)
 					{
 						// Break if pawn is out of citadels, and it is moving on a citadel
-						if (!citadels.contains(state.getBox(i, j)) && citadels.contains(state.getBox(i, k)))
+						if (!citadels.contains(state.getBox(i, j)) && citadels.contains(state.getBox(k, j)))
 						{
 							break;
 						}
-
-						// Check if we are moving on an empty cell
-						else if (state.getPawn(i, k).equalsPawn(State.Pawn.EMPTY.toString().toString()))
+						// Check if we are moving on a empty cell
+						else if (state.getPawn(k, j).equalsPawn(State.Pawn.EMPTY.toString()))
 						{
 							String from = state.getBox(i, j);
-							String to = state.getBox(i, k);
+							String to = state.getBox(k, j);
 
 							Action action = null;
 							try {
 								action = new Action(from, to, turn);
-								// If the action is allowed, add it to the list
-								if (isPossibleMove(state.clone(), action))
-									possibleActions.add(action);
 							} catch (IOException e) {
 								e.printStackTrace();
 							}
-						}
-						// There is a pawn in the same column, and it cannot be crossed
-						else
-						{
-							break;
-						}
+
+							// Check if action is admissible and if it is, add it to list possibleActions
+							if(isPossibleMove(state.clone(), action))
+								possibleActions.add(action);
+
+						} else 	break; // There is a pawn in the same column, and it cannot be crossed
 					}
 
-					// Search on right of pawn (#column + 1)
-					for (int k = j + 1; k < state.getBoard().length; k++)
+					// Search on left of pawn
+					for (int k = j-1; k >= 0; k--)
 					{
 						// Break if pawn is out of citadels, and it is moving on a citadel
 						if (!citadels.contains(state.getBox(i, j)) && citadels.contains(state.getBox(i, k)))
@@ -927,18 +891,44 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 							Action action = null;
 							try {
 								action = new Action(from, to, turn);
-								// If the action is allowed, add it to the list
-								if (isPossibleMove(state.clone(), action))
-									possibleActions.add(action);
 							} catch (IOException e) {
 								e.printStackTrace();
 							}
-						}
-						// There is a pawn in the same column, and it cannot be crossed
-						else
+
+							// Check if action is admissible and if it is, add it to list possibleActions
+							if(isPossibleMove(state.clone(), action))
+								possibleActions.add(action);
+
+						} else break; // There is a pawn in the same row, and it cannot be crossed
+					}
+
+					// Search on right of pawn
+					for (int k = j+1; k < state.getBoard().length; k++)
+					{
+						// Break if pawn is out of citadels, and it is moving on a citadel
+						if (!citadels.contains(state.getBox(i, j)) && citadels.contains(state.getBox(i, k)))
 						{
 							break;
 						}
+
+						// Check if we are moving on a empty cell
+						else if (state.getPawn(i, k).equalsPawn(State.Pawn.EMPTY.toString()))
+						{
+							String from = state.getBox(i, j);
+							String to = state.getBox(i, k);
+
+							Action action = null;
+							try {
+								action = new Action(from, to, turn);
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+
+							// Check if action is admissible and if it is, add it to list possibleActions
+							if(isPossibleMove(state.clone(), action))
+								possibleActions.add(action);
+
+						} else break; // There is a pawn in the same row, and it cannot be crossed
 					}
 				}
 			}
@@ -962,13 +952,9 @@ public class GameAshtonTablut implements Game, Cloneable, aima.core.search.adver
 
 		// Check the state for any capture
 		if (state.getTurn().equalsTurn("W"))
-		{
 			state = this.checkCaptureBlack(state, action);
-		}
 		else if (state.getTurn().equalsTurn("B"))
-		{
 			state = this.checkCaptureWhite(state, action);
-		}
 
 		return state;
 	}
