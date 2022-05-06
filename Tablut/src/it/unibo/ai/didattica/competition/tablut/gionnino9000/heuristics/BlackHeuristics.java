@@ -13,7 +13,7 @@ public class BlackHeuristics extends Heuristics {
     private final int RHOMBUS_POS = 3;
     private final int BLOCKED_ESC = 3;
 
-    private final double PAWNS_AGGRESSION_WEIGHT = 3.0;
+    private final double PAWNS_AGGRESSION_WEIGHT = 2.0;
 
     // Flag to enable console print
     private boolean print = false;
@@ -38,9 +38,9 @@ public class BlackHeuristics extends Heuristics {
         super(state);
 
         earlyGameWeights = new Double[4];
-        earlyGameWeights[WHITE_EATEN] = 50.0;
+        earlyGameWeights[WHITE_EATEN] = 45.0;
         earlyGameWeights[BLACK_ALIVE] = 35.0;
-        earlyGameWeights[BLACK_SUR_K] = 10.0;
+        earlyGameWeights[BLACK_SUR_K] = 15.0;
         earlyGameWeights[RHOMBUS_POS] = 5.0;
 
         lateGameWeights = new Double[4];
@@ -57,8 +57,10 @@ public class BlackHeuristics extends Heuristics {
     public double evaluateState() {
         int[] kingPos = kingPosition(state);
 
+        /*
         if (canKingEscape(kingPos))
             return Double.NEGATIVE_INFINITY;
+         */
 
         double stateValue = 0.0;
         boolean lateGame = false;
