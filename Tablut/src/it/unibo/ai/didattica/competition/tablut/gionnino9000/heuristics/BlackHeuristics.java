@@ -57,11 +57,6 @@ public class BlackHeuristics extends Heuristics {
     public double evaluateState() {
         int[] kingPos = kingPosition(state);
 
-        /*
-        if (canKingEscape(kingPos))
-            return Double.NEGATIVE_INFINITY;
-         */
-
         double stateValue = 0.0;
         boolean lateGame = false;
 
@@ -175,60 +170,6 @@ public class BlackHeuristics extends Heuristics {
         return capturable;
     }
 
-    /**
-     * @return a negative value for a SURE king escape (witch we want to prevent)
-     */
-    private boolean canKingEscape(int[] kPos) {
-        int[] escapes = getKingEscapes(state, kPos);
-        int numEsc = Arrays.stream(escapes).sum();
-        if (numEsc > 1)
-            return true;
 
-        // in case king has only one escape check if we can block with any pawns
-        else if (numEsc == 1) {
-            // up escape
-            if (escapes[0] == 1) {
-                for(int i = kPos[0]-1; i >= 0; i--) {
-                    int[] checkPos = new int[]{i, kPos[1]};
-                    if (checkLeftSide(state, State.Pawn.BLACK, checkPos) || checkRightSide(state, State.Pawn.BLACK, checkPos)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            // down escape
-            if (escapes[1] == 1) {
-                for(int i = kPos[0]+1; i <= 8; i++) {
-                    int[] checkPos = new int[]{i, kPos[1]};
-                    if (checkLeftSide(state, State.Pawn.BLACK, checkPos) || checkRightSide(state, State.Pawn.BLACK, checkPos)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            // left escape
-            if (escapes[2] == 1) {
-                for(int i = kPos[1]-1; i >= 0; i--) {
-                    int[] checkPos = new int[]{kPos[0], i};
-                    if (checkUpside(state, State.Pawn.BLACK, checkPos) || checkDownside(state, State.Pawn.BLACK, checkPos)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            // right escape
-            if (escapes[3] == 1) {
-                for(int i = kPos[1]+1; i <= 8; i++) {
-                    int[] checkPos = new int[]{kPos[0], i};
-                    if (checkUpside(state, State.Pawn.BLACK, checkPos) || checkDownside(state, State.Pawn.BLACK, checkPos)) {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
-    }
-
-    // add pawn per quadrant distribution evaluation
+    // add pawn per quadrant distribution evaluation ?
 }
