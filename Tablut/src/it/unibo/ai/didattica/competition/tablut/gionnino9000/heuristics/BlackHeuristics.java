@@ -64,14 +64,14 @@ public class BlackHeuristics extends Heuristics {
         if (numbOfWhite <= 4)
             lateGame = true;
 
-
         // Values for the weighted sum
         double numberOfBlackAlive = (double) state.getNumberOf(State.Pawn.BLACK) / GameAshtonTablut.NUM_BLACK;
         double numberOfWhiteEaten = (double) (GameAshtonTablut.NUM_WHITE - numbOfWhite) / GameAshtonTablut.NUM_WHITE;
         double surroundKing = (double) checkAdjacentPawns(state, kingPos, State.Turn.BLACK.toString()) / getNumbToEatKing(state);
 
-        double whiteInDanger = (double) getPawnsAggression() / numbOfWhite;
-        stateValue += whiteInDanger * PAWNS_AGGRESSION_WEIGHT;
+        double whiteInDanger = getPawnsAggression();
+        if (whiteInDanger > 0)
+            stateValue += (whiteInDanger / numbOfWhite) * PAWNS_AGGRESSION_WEIGHT;
 
         if (print) {
             System.out.println("Black pawns alive: " + numberOfBlackAlive);
