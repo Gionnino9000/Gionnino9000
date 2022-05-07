@@ -136,7 +136,7 @@ public class Tavoletta extends TablutClient {
 
             // Update the state received
             state = this.getCurrentState();
-            System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Current state: ");
+            System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME  + "dice \"bro pastati sto stato\" ");
             System.out.println(state.toString());
 
             // WHITE turn
@@ -144,11 +144,11 @@ public class Tavoletta extends TablutClient {
 
                 if(state.getTurn().equals(State.Turn.WHITE)) {
 
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Searching a suitable move...");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME +  " dice \"sto pensando alla prossima mossa, mhhhhhh...\"");
 
                     Action a = findBestMove(tablut, state);
 
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Action selected: " + a.toString());
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME  + " dice \"proviamo a fare sta mossa: " + a.toString() + "\"");
 
                     try {
                         this.write(a);
@@ -158,17 +158,17 @@ public class Tavoletta extends TablutClient {
 
                 } else if(state.getTurn().equals(State.Turn.BLACK)) {
                     // Opponent TURN
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Waiting for the opponent turn...");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"sto aspettando il turno dell'avversario, sbrigati bro...\"");
                 } else if(state.getTurn().equals(State.Turn.WHITEWIN)) {
                     // if WHITE win
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | YOU WIN");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"abbiamo vinto, POG, dammi le mie spaccamascella! 🍬🍭\"");
                     System.exit(0);
                 } else if(state.getTurn().equals(State.Turn.BLACKWIN)) {
                     // if BLACK win
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | YOU LOSE");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"abbiamo perso sus, mi sa che hanno barato... premi F per pagare i rispetti\"");
                     System.exit(0);
                 } else if(state.getTurn().equals(State.Turn.DRAW)) {
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | DRAW");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"pareggio, onesto.\"");
                     System.exit(0);
                 }
             }
@@ -177,11 +177,11 @@ public class Tavoletta extends TablutClient {
 
                 if(state.getTurn().equals(State.Turn.BLACK)) {
 
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Searching a suitable move...");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME +  " dice \"sto pensando alla prossima mossa, mhhhhhh...\"");
 
                     Action a = findBestMove(tablut, state);
 
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Action selected: " + a.toString());
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME  + " dice \"proviamo a fare sta mossa: " + a.toString() + "\"");
 
                     try {
                         this.write(a);
@@ -191,17 +191,17 @@ public class Tavoletta extends TablutClient {
 
                 } else if(state.getTurn().equals(State.Turn.WHITE)) {
                     // Opponent TURN
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | Waiting for the opponent turn...");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"sto aspettando il turno dell'avversario, sbrigati bro...\"");
                 } else if(state.getTurn().equals(State.Turn.BLACKWIN)) {
                     // if WHITE win
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | YOU WIN");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"abbiamo vinto, POG, dammi le mie spaccamascella! 🍬🍭\"");
                     System.exit(0);
                 } else if(state.getTurn().equals(State.Turn.WHITEWIN)) {
                     // if BLACK win
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | YOU LOSE");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"abbiamo perso sus, mi sa che hanno barato... premi F per pagare i rispetti\"");
                     System.exit(0);
                 } else if(state.getTurn().equals(State.Turn.DRAW)) {
-                    System.out.println("[" + PLAYER_NAME.toUpperCase() + "] | DRAW");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"pareggio, onesto.\"");
                     System.exit(0);
                 }
 
