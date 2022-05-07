@@ -48,14 +48,16 @@ public class WhiteHeuristics extends Heuristics{
         // Values for the weighted sum
         double numberOfWhiteAlive = (double)  numbOfWhite / GameAshtonTablut.NUM_WHITE;
         double numberOfBlackEaten = (double)  (GameAshtonTablut.NUM_BLACK - numbOfBlack) / GameAshtonTablut.NUM_BLACK;
-        double safePawnsPercent = (double) getPawnsSafety() / numbOfWhite;
-        double kingMovEval = evalKingMovement(kingPos);
 
+        double kingMovEval = evalKingMovement(kingPos);
         double evalKingEsc = evalKingEscapes(kingPos);
+        double safePawns = getPawnsSafety();
+        if (safePawns > 0)
+            stateValue += (safePawns / numbOfWhite) * gameWeights[SAFE_PAWNS];
 
         stateValue += numberOfWhiteAlive * gameWeights[WHITE_ALIVE];
         stateValue += numberOfBlackEaten * gameWeights[BLACK_EATEN];
-        stateValue += safePawnsPercent * gameWeights[SAFE_PAWNS];
+
         stateValue += kingMovEval * gameWeights[KING_MOVEMENT];
 
         stateValue += evalKingEsc;
