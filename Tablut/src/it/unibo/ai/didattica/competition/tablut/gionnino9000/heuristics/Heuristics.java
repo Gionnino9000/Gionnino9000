@@ -295,7 +295,7 @@ public abstract class Heuristics {
     /**
      * @return number of Target pawns in given quadrant
      */
-    public int getEnemyCount(State state, State.Pawn target, int quadrant) {
+    public int getQuadrantCount(State state, State.Pawn target, int quadrant) {
         int[] rowRange = new int[2];
         int[] columnRange = new int[2];
         int count = 0;
