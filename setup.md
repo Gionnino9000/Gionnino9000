@@ -38,7 +38,6 @@ Può essere necessario dover impostare "src" come root directory del progetto:
 
 2. Eseguire `Tablut/src/it/unibo/ai/didattica/competition/tablut/gionnino9000/clients/BlackTavoletta.java`
 3. Eseguire `Tablut/src/it/unibo/ai/didattica/competition/tablut/gionnino9000/clients/WhiteTavoletta.java`
-4. Have fun!
 
 ### Build JAR su IntelliJ
 Per compilare il progetto ed ottenere un jar eseguibile, è necessario creare un artefatto:
