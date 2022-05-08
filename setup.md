@@ -14,8 +14,8 @@
   ```
 
 ### Setup su IntelliJ
-1. Importare la cartella `Tablut/src/` su Intellij (`File` -> `Open`)
-2. Andare su `File` -> `Project Structure` -> `Libraries` e selezionare `+`
+1. Importare la cartella `Tablut/src/` su Intellij (`File` > `Open`)
+2. Andare su `File` > `Project Structure` > `Libraries` e selezionare `+`
 3. Selezionare `Java` e importare la cartella `Tablut/lib`
 
 Può essere necessario dover impostare "src" come root directory del progetto:
@@ -40,8 +40,9 @@ Può essere necessario dover impostare "src" come root directory del progetto:
 3. Eseguire `Tablut/src/it/unibo/ai/didattica/competition/tablut/gionnino9000/clients/WhiteTavoletta.java`
 4. Have fun!
 
-### Deploy
+### Build JAR su IntelliJ
 Per compilare il progetto ed ottenere un jar eseguibile, è necessario creare un artefatto:
 1. `File` > `Project Structure`
-2. `(Project Settings) Artifacts` > `+` > `JAR` > `From modules with dependencies`
-3. Selezionare la classe del Main che verrà eseguita
+2. `(Project Settings) Artifacts` > `+`
+3. `JAR` > `From modules with dependencies`
+4. Selezionare la classe del Main che verrà eseguita
