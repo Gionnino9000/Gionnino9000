@@ -15,8 +15,8 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>SingleThreaded MinMax</li>
-        <li>Iterative Deeping, alpha-beta pruning and partial ordering between iterations</li>
+        <li>Single threaded Minimax</li>
+        <li>Iterative deeping, alpha-beta pruning and partial ordering between iterations</li>
         <li>Heuristic strongly based on playing around the king</li>
       </ul>
     </td>
@@ -39,7 +39,7 @@
     <td>3° 🥉</td>
     <td>
       <ul>
-        <li>C Language</li>
+        <li>C language</li>
         <li>pthread</li>
         <li>Bit masks</li>
       </ul>
@@ -53,7 +53,7 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>Java Language</li>
+        <li>Java language</li>
         <li>Didn't use AIMA libraries</li>
         <li>Extra client with parameters for weights</li>
       </ul>
@@ -118,7 +118,7 @@
       <ul>
         <li>Great white heuristics</li>
         <li>Probably second second just because Weakmind was a monster</li>
-        <li>Compile but throws NullPointerExceptions after connecting to server</li>
+        <li>It compiles, but throws NullPointerExceptions after connecting to server</li>
       </ul>
     </td>
   </tr>
@@ -209,7 +209,7 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>MinMax, alpha-beta cuts and iterative deepening search</li>
+        <li>Minimax, alpha-beta cuts and iterative deepening search</li>
         <li>Simple heuristics</li>
         <li><ins>Great explaination in <a href="https://github.com/gmurro/Tablut/blob/main/BrAInmatesTablutPresentation.pdf">PDF</a></ins></li>
       </ul>
@@ -231,7 +231,7 @@
     <td>3° 🥉</td>
     <td>
       <ul>
-        <li>MinMax with alpha-beta pruning (no AIMA libraries)</li>
+        <li>Minimax with alpha-beta pruning (no AIMA libraries)</li>
         <li>Iterative deepening</li>
         <li>Bitstate as data structure</li>
         <li>Parallelization: first level is explored in parallel</li>
