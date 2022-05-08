@@ -172,7 +172,7 @@ public class Tavoletta extends TablutClient {
 
                 } else if(state.getTurn().equals(State.Turn.BLACK)) {
                     // Opponent TURN
-                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice che dobbiamo aspettare il turno dell'avversario... Dai sbrigati bro...\"");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice che dobbiamo aspettare il turno dell'avversario... Dai sbrigati bro...");
                 } else if(state.getTurn().equals(State.Turn.WHITEWIN)) {
                     // if WHITE win
                     System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"abbiamo vinto! POG, dammi le mie spaccamascella! 🍬🍭\"");
@@ -205,7 +205,7 @@ public class Tavoletta extends TablutClient {
 
                 } else if(state.getTurn().equals(State.Turn.WHITE)) {
                     // Opponent TURN
-                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice che dobbiamo aspettare il turno dell'avversario... Dai sbrigati bro...\"");
+                    System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice che dobbiamo aspettare il turno dell'avversario... Dai sbrigati bro...");
                 } else if(state.getTurn().equals(State.Turn.BLACKWIN)) {
                     // if WHITE win
                     System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice \"abbiamo vinto! POG, dammi le mie spaccamascella! 🍬🍭\"");
