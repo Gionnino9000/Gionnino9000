@@ -118,7 +118,7 @@
       <ul>
         <li>Great White Heuristics</li>
         <li>Probably Second second just because weakmind was a monster</li>
-        <li>Compile but throws NullPointerExceptions after connecting to the Server</li>
+        <li>Compile but throws NullPointerExceptions after connecting to server</li>
       </ul>
     </td>
   </tr>
@@ -221,9 +221,7 @@
     <td>2° 🥈</td>
     <td>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li></li> Aima libraries + Iterative Deepening Alpha-Beta Search
       </ul>
     </td>
   </tr>
