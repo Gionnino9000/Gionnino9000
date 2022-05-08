@@ -7,9 +7,12 @@ Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per i
 </div>
 
 ### Esecuzione del Player
-1. Download del nostro player Tavoletta
-2. Esecuzione del server
-3. [...]
+1. Download dell'[ultima release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) del nostro player Tavoletta
+2. Esecuzione del Server
+3. Esecuzione del Player con parametri <WHITE|BLACK> <timeout> <ip_address>
+   (es: `java -jar Tavoletta WHITE 60 localhost`)
+4. Esecuzione di un secondo player, ad esempio un random, un client umano oppure un altro giocatore.
+5. Have fun!
 
 ### Spiegazione del Nome
 Tablut = Tavoletta<br/>
@@ -27,19 +30,25 @@ Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non 
 - [Alex Gianelli](https://github.com/Noesh)
 - [Michele Righi](https://github.com/mikyll)
 
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_running.gif"/>
+
 ### Migliori Team degli Anni Precedenti
-[History](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md)
+[History & Hall of Fame](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md).
 
 ### Setup
-Per il setup fare riferimento a [questo documento](https://github.com/Gionnino9000/Gionnino9000/blob/main/setup.md)
+Per il setup fare riferimento a [questo documento](https://github.com/Gionnino9000/Gionnino9000/blob/main/setup.md).
 
 ### Riferimenti
 - [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
 
 ### Memoni Giganti
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/WidePlank.gif"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoSus.png"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/TavolettaPiediGrandi.png"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/TavolettaPH.png"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/BigPP.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/WidePlank.gif"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/GionninoSus.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/TavolettaPiediGrandi.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/TavolettaPH.png"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_eating_matress.gif"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_SUS_smile.jpg"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_coconut.jpg"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Edd/Edd_St00ped.jpg"/>
+<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Kevin/Kevin_yelling.png"/> 
