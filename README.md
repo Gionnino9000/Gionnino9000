@@ -1,10 +1,18 @@
 <h1 align="center">Gionnino9000</h1>
 <div align="center">
 
+[![java][java-shield]][java-url]
+[![BSD3 License][license-shield]][license-url]
+[![Downloads][downloads-shield]][downloads-url]
+![stars](https://custom-icon-badges.herokuapp.com/github/stars/Gionnino9000/Gionnino9000?logo=star&logoColor=yellow)
+![plank](https://custom-icon-badges.herokuapp.com/badge/plankness-100%25-yellow?logo=plankness&logoColor=yellow)
+ 
 Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di [Fondamenti di Intelligenza Artificiale M](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002).<br/><br/>
 <a href="https://www.youtube.com/watch?v=G2NjmWRps28">Ascolta sto banger</a>
 
+
 </div>
+
 
 ### Esecuzione del Player
 1. Download dell'[ultima release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) del nostro player Tavoletta
@@ -55,3 +63,10 @@ Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](https://github.com/Gion
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_coconut.jpg"/>
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Edd/Edd_St00ped.jpg"/>
 <img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Kevin/Kevin_yelling.png"/> 
+
+[java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
+[java-url]: https://www.java.com
+[downloads-shield]: https://img.shields.io/github/downloads/Gionnino9000/Gionnino9000/total
+[downloads-url]: https://github.com/mikyll/Gionnino9000/Gionnino9000/latest
+[license-shield]: https://img.shields.io/github/license/Gionnino9000/Gionnino9000
+[license-url]: https://github.com/Gionnino9000/Gionnino9000/blob/master/LICENSE
