@@ -3,7 +3,7 @@
 ### Setup Macchina Virtuale
 1. Scaricare l'immagine .ova da [questo link](https://liveunibo-my.sharepoint.com/:u:/g/personal/andrea_giovine_unibo_it/Eb_-2bR2YNtAs_F7D2i8jFkBY0KWWKfjNIY4-AoGMwVHFA)
 2. Importare ed eseguire la VM
-3. Accedere con username `tablut` e password: `tablut`
+3. Accedere con username `tablut` e password `tablut`
 4. Installare Java 11
   ```bash
   sudo apt install openjdk-11-jdk -y
