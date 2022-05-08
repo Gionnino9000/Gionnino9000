@@ -1,4 +1,4 @@
-##### Setup
+<h1 align="center">Setup</h1>
 
 ### Setup Macchina Virtuale
 1. Scaricare l'immagine .ova da [questo link](https://liveunibo-my.sharepoint.com/:u:/g/personal/andrea_giovine_unibo_it/Eb_-2bR2YNtAs_F7D2i8jFkBY0KWWKfjNIY4-AoGMwVHFA)
