@@ -72,7 +72,7 @@ Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](https://github.com/Gion
 [java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
 [java-url]: https://www.java.com
 [downloads-shield]: https://img.shields.io/github/downloads/Gionnino9000/Gionnino9000/total
-[downloads-url]: https://github.com/mikyll/Gionnino9000/Gionnino9000/releases/latest
+[downloads-url]: https://github.com/Gionnino9000/Gionnino9000/releases
 [license-shield]: https://img.shields.io/github/license/Gionnino9000/Gionnino9000
 [license-url]: https://github.com/Gionnino9000/Gionnino9000/blob/main/LICENSE
 [stars-shield]: https://custom-icon-badges.herokuapp.com/github/stars/Gionnino9000/Gionnino9000?logo=star&logoColor=yellow
