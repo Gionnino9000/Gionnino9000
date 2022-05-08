@@ -5,6 +5,12 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.util.Arrays;
 
+/**
+ * Heuristics for the evaluation of a black player state.
+ * Description: TO-DO [...]
+ *
+ * @author Gionnino9000
+ */
 public class BlackHeuristics extends Heuristics {
 
     private final int WHITE_EATEN = 0;
@@ -18,7 +24,7 @@ public class BlackHeuristics extends Heuristics {
     // Flag to enable console print
     private boolean print = false;
 
-    // Numb. tiles in rhombus
+    // Number of tiles in rhombus
     private final int TILES_IN_RHOMBUS = 8;
 
     // Weights for evaluation in the following order: WhiteEaten, BlackAlive, BlackSurroundingKing, RhombusPos
@@ -51,7 +57,7 @@ public class BlackHeuristics extends Heuristics {
     }
 
     /**
-     * @return the evaluation of the states using a weighted sum
+     * @return the evaluation of the current state using a weighted sum
      */
     @Override
     public double evaluateState() {
@@ -111,7 +117,7 @@ public class BlackHeuristics extends Heuristics {
     }
 
     /**
-     * @return Number of black pawns on tiles if we have enough pawns
+     * @return the number of black pawns on tiles if we have enough pawns
      */
     public int getRhombusValue() {
         if (state.getNumberOf(State.Pawn.BLACK) >= 10) {
@@ -122,7 +128,7 @@ public class BlackHeuristics extends Heuristics {
     }
 
     /**
-     * @return Number of black pawns on rhombus configuration
+     * @return the number of black pawns on rhombus configuration
      */
     public int pawnsInRhombus() {
         int count = 0;
@@ -136,14 +142,16 @@ public class BlackHeuristics extends Heuristics {
     }
 
     /**
-     * @return Number of pawns blocking king escape
+     * @return the number of pawns blocking king escape
      */
     public int blockingPawns() {
         return 4 - Arrays.stream(getKingEscapes(state, kingPosition(state))).sum();
     }
 
     /**
-     * @return Adds value to the position if we create win threats
+     * Used to add value to the position if we create win threats
+     *
+     * @return 10.0 if the king can be captured, 0.0 otherwise
      */
     private double canCaptureKing() {
         if (canBeCaptured(state, kingPosition(state), State.Pawn.KING))
@@ -170,6 +178,5 @@ public class BlackHeuristics extends Heuristics {
         return capturable;
     }
 
-
-    // add pawn per quadrant distribution evaluation ?
+    // Add pawn per quadrant distribution evaluation ?
 }

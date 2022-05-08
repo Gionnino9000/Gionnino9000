@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: it.unibo.ai.didattica.competition.tablut.gionnino9000.client
+ s.Tavoletta
+

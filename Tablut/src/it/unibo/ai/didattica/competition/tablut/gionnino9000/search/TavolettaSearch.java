@@ -7,7 +7,7 @@ import it.unibo.ai.didattica.competition.tablut.domain.GameAshtonTablut;
 import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 /**
- * Custom implementation of AIMA Iterative Deepening MinMax search with Alpha-Beta Pruning.
+ * "Custom" implementation of AIMA Iterative Deepening MinMax search with Alpha-Beta Pruning.
  * Maximal computation time is specified in seconds.
  * This configuration redefines the method eval() using getUtility() method in {@link GameAshtonTablut}.
  *
@@ -53,7 +53,7 @@ public class TavolettaSearch extends IterativeDeepeningAlphaBetaSearch<State, Ac
     @Override
     public Action makeDecision(State state) {
         Action a = super.makeDecision(state);
-        System.out.println(TEAM_NAME + ": " + PLAYER_NAME + "dice: ho esplorato " + getMetrics().get(METRICS_NODES_EXPANDED) + " nodes, raggiungendo una profondità di " + getMetrics().get(METRICS_MAX_DEPTH));
+        System.out.println(TEAM_NAME + ": " + PLAYER_NAME + " dice che ha esplorato " + getMetrics().get(METRICS_NODES_EXPANDED) + " nodi, raggiungendo una profondità di " + getMetrics().get(METRICS_MAX_DEPTH));
 
         return a;
     }

@@ -5,6 +5,13 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 
 import java.util.Arrays;
 
+/**
+ * Heuristics for the evaluation of a white player state.
+ *
+ * Description: TO-DO [...]
+ *
+ * @author Gionnino9000
+ */
 public class WhiteHeuristics extends Heuristics{
 
     private final int WHITE_ALIVE = 0;
@@ -27,11 +34,10 @@ public class WhiteHeuristics extends Heuristics{
         gameWeights[BLACK_EATEN] = 18.0;
         gameWeights[KING_MOVEMENT] = 5.0;
         gameWeights[SAFE_PAWNS] = 42.0;
-
     }
 
     /**
-     * @return the evaluation of the states using a weighted sum
+     * @return the evaluation of the current state using a weighted sum
      */
     @Override
     public double evaluateState() {
@@ -39,7 +45,7 @@ public class WhiteHeuristics extends Heuristics{
 
         int[] kingPos = kingPosition(state);
 
-        // if king can be captured PRUNE THOSE MFS
+        // If king can be captured PRUNE THOSE MFS
         if (canBeCaptured(state, kingPos, State.Pawn.KING))
             return Double.NEGATIVE_INFINITY;
 
@@ -73,6 +79,11 @@ public class WhiteHeuristics extends Heuristics{
         return stateValue;
     }
 
+    /**
+     * @param kPos The king position
+     *
+     * @return a greater value if the king can move in one or more directions
+     */
     private double evalKingMovement(int[] kPos) {
         int val = getKingMovement(state, kPos);
 
@@ -103,16 +114,19 @@ public class WhiteHeuristics extends Heuristics{
     }
 
     /**
-     * @return a positive value for a SURE king escape
+     * @param kPos The king Position
+     *
+     * @return a positive value for a SURE king escape (greater if there are more than once). If there are no escapes, 0.0
      */
     private double evalKingEscapes(int[] kPos) {
         int[] escapes = getKingEscapes(state, kPos);
         int numEsc = Arrays.stream(escapes).sum();
         if (numEsc > 1)
             return 200.0;
-        // in case we have one escape only we check whether an enemy can block escape
+
+        // In case we have one escape only we check whether an enemy can block escape
         else if (numEsc == 1) {
-            // up escape
+            // Up escape
             if (escapes[0] == 1) {
                 for(int i = kPos[0]-1; i >= 0; i--) {
                     int[] checkPos = new int[]{i, kPos[1]};
@@ -122,7 +136,7 @@ public class WhiteHeuristics extends Heuristics{
                 }
                 return 80.0;
             }
-            // down escape
+            // Down escape
             if (escapes[1] == 1) {
                 for(int i = kPos[0]+1; i <= 8; i++) {
                     int[] checkPos = new int[]{i, kPos[1]};
@@ -132,7 +146,7 @@ public class WhiteHeuristics extends Heuristics{
                 }
                 return 80.0;
             }
-            // left escape
+            // Left escape
             if (escapes[2] == 1) {
                 for(int i = kPos[1]-1; i >= 0; i--) {
                     int[] checkPos = new int[]{kPos[0], i};
@@ -142,7 +156,7 @@ public class WhiteHeuristics extends Heuristics{
                 }
                 return 80.0;
             }
-            // right escape
+            // Right escape
             if (escapes[3] == 1) {
                 for(int i = kPos[1]+1; i <= 8; i++) {
                     int[] checkPos = new int[]{kPos[0], i};
