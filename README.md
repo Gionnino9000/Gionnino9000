@@ -10,7 +10,7 @@ Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per i
 1. Download dell'[ultima release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) del nostro player Tavoletta
 2. Esecuzione del Server
 3. Esecuzione del Player con parametri <WHITE|BLACK> \<timeout> <ip_address>
-   (es: `java -jar Tavoletta WHITE 60 localhost`)
+   (es: `java -jar ./Tavoletta.jar WHITE 60 localhost`)
 4. Esecuzione di un secondo player, ad esempio un random, un client umano oppure un altro giocatore.
 5. Have fun!
 
