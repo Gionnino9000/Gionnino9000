@@ -15,7 +15,7 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>Single threaded Minimax</li>
+        <li>Single threaded MinMax</li>
         <li>Iterative deeping, alpha-beta pruning and partial ordering between iterations</li>
         <li>Heuristic strongly based on playing around the king</li>
       </ul>
@@ -191,7 +191,7 @@
       <ul>
         <li>Java language</li>
         <li>Didn't use AIMA libraries</li>
-        <li>Minimax with alpha-beta pruning</li>
+        <li>MinMax with alpha-beta pruning</li>
       </ul>
     </td>
   </tr>
@@ -209,7 +209,7 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>Minimax, alpha-beta cuts and iterative deepening search</li>
+        <li>MinMax, alpha-beta cuts and iterative deepening search</li>
         <li>Simple heuristics</li>
         <li><ins>Great explaination in <a href="https://github.com/gmurro/Tablut/blob/main/BrAInmatesTablutPresentation.pdf">PDF</a></ins></li>
       </ul>
@@ -221,7 +221,7 @@
     <td>2° 🥈</td>
     <td>
       <ul>
-        <li></li> AIMA libraries + iterative deepening alpha-beta search
+        <li>AIMA libraries + iterative deepening alpha-beta search</li>
       </ul>
     </td>
   </tr>
@@ -231,9 +231,10 @@
     <td>3° 🥉</td>
     <td>
       <ul>
-        <li>Minimax with alpha-beta pruning (no AIMA libraries)</li>
+        <li>Java Language (+ Python attempt)</li>
+        <li>MinMax with alpha-beta pruning (no AIMA libraries)</li>
         <li>Iterative deepening</li>
-        <li>Bitstate as data structure</li>
+        <li>BitState as data structure</li>
         <li>Parallelization: first level is explored in parallel</li>
       </ul>
     </td>
