@@ -38,6 +38,9 @@ Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non 
 ### Setup
 Per il setup fare riferimento a [questo documento](https://github.com/Gionnino9000/Gionnino9000/blob/main/setup.md).
 
+### Licenza
+Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](https://github.com/Gionnino9000/Gionnino9000/blob/main/LICENSE) per maggiori informazioni.
+   
 ### Riferimenti
 - [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
