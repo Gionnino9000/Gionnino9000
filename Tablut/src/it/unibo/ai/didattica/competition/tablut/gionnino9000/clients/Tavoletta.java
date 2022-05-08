@@ -113,6 +113,12 @@ public class Tavoletta extends TablutClient {
             }
         }
 
+        System.out.println("Team Gionnino9000\n\nMembers:\n\tFederico Andrucci\n\tKarina Chichifoi\n\tAlex Gianelli\n\tMichele Righi\n");
+        System.out.println("Player:  " + role);
+        System.out.println("Timeout: " + timeout + " secondi");
+        System.out.println("Server:  " + ip);
+        System.out.println("Debug:   " + deb + "\n");
+
         Tavoletta client = new Tavoletta(role, PLAYER_NAME + " (Team " + TEAM_NAME + ")", timeout, ip, gameType, deb);
         client.run();
     }
