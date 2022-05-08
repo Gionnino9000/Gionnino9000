@@ -77,7 +77,7 @@
     <td>3° 🥉</td>
     <td>
       <ul>
-        <li>C Language</li>
+        <li>C language</li>
         <li>Lazy SMP algorithm</li>
         <li>Hash tables</li>
       </ul>
@@ -89,7 +89,7 @@
     <td>4°</td>
     <td>
       <ul>
-        <li>Kotlin Language</li>
+        <li>Kotlin language</li>
         <li>Iterative deepening alpha beta search</li>
         <li><ins>Great explaination <a href="https://github.com/imRaazy/YinIAngWarriorsTablut/blob/master/YinIAngWarriors_introduction.pdf">PDF</a></ins></li>
       </ul>
@@ -103,7 +103,7 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>Rust Language</li>
+        <li>Rust language</li>
         <li>17 wins, 1 draw, 0 losts</li>
         <li>Unreadable code and doesn't compile</li>
         <li>Even if you fix compilation errors, server explodes at runtime :)
@@ -117,7 +117,7 @@
     <td>
       <ul>
         <li>Great white heuristics</li>
-        <li>Probably second second just because Weakmind was a monster</li>
+        <li>Probably second just because Weakmind was a monster</li>
         <li>It compiles, but throws NullPointerExceptions after connecting to server</li>
       </ul>
     </td>
@@ -189,9 +189,9 @@
     <td>2° 🥈</td>
     <td>
       <ul>
-        <li>Java Language</li>
+        <li>Java language</li>
         <li>Didn't use AIMA libraries</li>
-        <li>MinMax with alpha-beta pruning</li>
+        <li>Minimax with alpha-beta pruning</li>
       </ul>
     </td>
   </tr>
@@ -221,7 +221,7 @@
     <td>2° 🥈</td>
     <td>
       <ul>
-        <li></li> Aima libraries + iterative deepening alpha-beta search
+        <li></li> AIMA libraries + iterative deepening alpha-beta search
       </ul>
     </td>
   </tr>
