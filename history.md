@@ -16,8 +16,8 @@
     <td>
       <ul>
         <li>SingleThreaded MinMax</li>
-        <li>Iterative Deeping, AlphaBeta Pruning and Partial Ordering Between Iterations</li>
-        <li>Heuristic Strongly Based on Playing Around the King</li>
+        <li>Iterative Deeping, alpha-beta pruning and partial ordering between iterations</li>
+        <li>Heuristic strongly based on playing around the king</li>
       </ul>
     </td>
   </tr>
@@ -67,7 +67,7 @@
       <ul>
         <li>BitSet</li>
         <li>MinMax with alpha-beta pruning (made concurrent)</li>
-        <li>Simple Heuristic</li>
+        <li>Simple heuristic</li>
       </ul>
     </td>
   </tr>
@@ -90,8 +90,8 @@
     <td>
       <ul>
         <li>Kotlin Language</li>
-        <li>Iterative Deepening Alpha Beta Search</li>
-        <li><ins>Great Explaination <a href="https://github.com/imRaazy/YinIAngWarriorsTablut/blob/master/YinIAngWarriors_introduction.pdf">PDF</a></ins></li>
+        <li>Iterative deepening alpha beta search</li>
+        <li><ins>Great explaination <a href="https://github.com/imRaazy/YinIAngWarriorsTablut/blob/master/YinIAngWarriors_introduction.pdf">PDF</a></ins></li>
       </ul>
     </td>
   </tr>
@@ -116,8 +116,8 @@
     <td>2° 🥈</td>
     <td>
       <ul>
-        <li>Great White Heuristics</li>
-        <li>Probably Second second just because weakmind was a monster</li>
+        <li>Great white heuristics</li>
+        <li>Probably second second just because Weakmind was a monster</li>
         <li>Compile but throws NullPointerExceptions after connecting to server</li>
       </ul>
     </td>
@@ -179,7 +179,7 @@
       <ul>
         <li>Java language</li>
         <li>Didn't use AIMA libraries</li>
-        <li>MinMax with Alpha-Beta pruning & custom evaluation</li>
+        <li>MinMax with alpha-beta pruning & custom evaluation</li>
       </ul>
     </td>
   </tr>
@@ -191,7 +191,7 @@
       <ul>
         <li>Java Language</li>
         <li>Didn't use AIMA libraries</li>
-        <li>MinMax with AlphaBeta Pruning</li>
+        <li>MinMax with alpha-beta pruning</li>
       </ul>
     </td>
   </tr>
@@ -199,7 +199,7 @@
     <td>2019/2020</td>
     <td>Gotta Train Em All (no repo)</td>
     <td>3° 🥉</td>
-    <td>Boh?</td>
+    <td>Boh? :( </td>
   </tr>
 <tr align="center"><td></td><td></td><td></td><td></td></tr>
 <!-- //////////////////// YEAR 2020/2021 //////////////////// -->
@@ -209,9 +209,9 @@
     <td>1° 🥇</td>
     <td>
       <ul>
-        <li>MinMax, Alpha Beta Cuts and Iterative Deepening Search</li>
-        <li>Simple Heuristics</li>
-        <li><ins>Great Explaination in <a href="https://github.com/gmurro/Tablut/blob/main/BrAInmatesTablutPresentation.pdf">PDF</a></ins></li>
+        <li>MinMax, alpha-beta cuts and iterative deepening search</li>
+        <li>Simple heuristics</li>
+        <li><ins>Great explaination in <a href="https://github.com/gmurro/Tablut/blob/main/BrAInmatesTablutPresentation.pdf">PDF</a></ins></li>
       </ul>
     </td>
   </tr>
@@ -221,7 +221,7 @@
     <td>2° 🥈</td>
     <td>
       <ul>
-        <li></li> Aima libraries + Iterative Deepening Alpha-Beta Search
+        <li></li> Aima libraries + iterative deepening alpha-beta search
       </ul>
     </td>
   </tr>
