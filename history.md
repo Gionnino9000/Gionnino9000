@@ -106,6 +106,7 @@
         <li>Rust Language</li>
         <li>17 wins, 1 draw, 0 losts</li>
         <li>Unreadable code and doesn't compile</li>
+        <li>Even if you fix compilation errors, server explodes at runtime :)
       </ul>
     </td>
   </tr>
@@ -232,9 +233,10 @@
     <td>3° 🥉</td>
     <td>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>MinMax with alpha-beta pruning (no AIMA libraries)</li>
+        <li>Iterative deepening</li>
+        <li>Bitstate as data structure</li>
+        <li>Parallelization: first level is explored in parallel</li>
       </ul>
     </td>
   </tr>
