@@ -1,24 +1,31 @@
-<h1 align="center">Gionnino9000</h1>
 <div align="center">
 
 [![java][java-shield]][java-url]
 [![BSD3 License][license-shield]][license-url]
 [![Downloads][downloads-shield]][downloads-url]
-![stars](https://custom-icon-badges.herokuapp.com/github/stars/Gionnino9000/Gionnino9000?logo=star&logoColor=yellow)
-![plank](https://custom-icon-badges.herokuapp.com/badge/plankness-100%25-yellow?logo=plankness&logoColor=yellow)
- 
-Our player for the Tablut Game Competition 2022 - [Fundamentals of Artificial Intelligence M @Unibo](https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002)<br/><br/>
-<a href="https://www.youtube.com/watch?v=G2NjmWRps28">Listen to this masterpiece</a>
+[![Stars][stars-shield]][stars-url]
+[![Plankness][plankness-shield]][plankness-url]
+</div>
 
+<h1 align="center">Gionnino9000</h1>
+<div align="center">
+
+Our player for the Tablut Challenge 2022, 
+Repository della nostra soluzione per la Tablut Challenge 2022 organized for the course
+<a href="https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002">Fundamentals of Artificial Intelligence M</a>.
+For more information about the game rules, the competition rules and about the strategy adopted by our team, click 
+<a href="https://github.com/Gionnino9000/Gionnino9000/blob/main/About.en.md">here</a>.
+<br/><br/>
+<a href="https://www.youtube.com/watch?v=G2NjmWRps28">Listen to this banger</a>
 
 </div>
 
 ### Running the Player
-- Download the latest release of our player Tavoletta
-- Server execution
-- Execution of the Player with parameters `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
+- Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
+- Launch the Server
+- Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
   (ex. `java -jar ./Tavoletta.jar WHITE 60 localhost`)
-- Execution of a second player, for example a random, a human client or another player
+- Launch a second player, for example a random or human client, or another player
 - Have fun!
 
 ### Name Explanation
@@ -30,19 +37,19 @@ Our player for the Tablut Game Competition 2022 - [Fundamentals of Artificial In
 
 _End of Name Explanation_
 
-So basically, I mean, we were like picking the name (woo, I mean, you cannot understand), when all of a sudden I remembered that chad (Danny Antonucci) had made a masterpiece. So I absolutely had to suss out a name bro, I had to show some drip, no cap my G, only flames 🥶 and I dropped this giant name piece bro, cool. Because, basically dude, we are team Gionnino9000, and our player is a cool plank. Got it? Because he plays Tablut, a board game, which is played on a plank, too cool, sigma grindset, based.
+So basically, I mean, we were like picking the name (woo, I mean, you cannot understand), when all of a sudden I remembered that chad Danny Antonucci had made like a [masterpiece](https://en.wikipedia.org/wiki/Ed,_Edd_n_Eddy). So I absolutely had to sus out a name bro, I had to show some drip, no cap my G, only flames 🥶 and then I dropped this giant name piece bro, cool. Because, basically dude, we are team Gionnino9000, and our player is Plank you know. Got it? Because he plays Tablut bro, too cool, sigma grindset, based factual.
 
 ### Team Members
-Federico Andrucci
-Karina Chichifoi
-Alex Gianelli
-Michele Righi
+- [Federico Andrucci](https://github.com/Federicoand98)
+- [Karina Chichifoi](https://github.com/TryKatChup/TryKatChup)
+- [Alex Gianelli](https://github.com/Noesh)
+- [Michele Righi](https://github.com/mikyll)
 
 ### Best Teams of Previous Years
-[History & Hall of Fame](https://github.com/Gionnino9000/Gionnino9000/blob/main/history.md).
+[History & Hall of Fame](https://github.com/Gionnino9000/Gionnino9000/blob/main/History.md).
 
 ### Setup
-Refer to [this document](https://github.com/Gionnino9000/Gionnino9000/blob/main/setup.md).
+Refer to [this document](https://github.com/Gionnino9000/Gionnino9000/blob/main/Setup.en.md).
 
 ### License
 Distributed under BSD 3-Clause License. See [`LICENSE`](https://github.com/Gionnino9000/Gionnino9000/blob/main/LICENSE) for further information.
@@ -65,6 +72,10 @@ Distributed under BSD 3-Clause License. See [`LICENSE`](https://github.com/Gionn
 [java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
 [java-url]: https://www.java.com
 [downloads-shield]: https://img.shields.io/github/downloads/Gionnino9000/Gionnino9000/total
-[downloads-url]: https://github.com/mikyll/Gionnino9000/Gionnino9000/latest
+[downloads-url]: https://github.com/Gionnino9000/Gionnino9000/releases
 [license-shield]: https://img.shields.io/github/license/Gionnino9000/Gionnino9000
-[license-url]: https://github.com/Gionnino9000/Gionnino9000/blob/master/LICENSE
+[license-url]: https://github.com/Gionnino9000/Gionnino9000/blob/main/LICENSE
+[stars-shield]: https://custom-icon-badges.herokuapp.com/github/stars/Gionnino9000/Gionnino9000?logo=star&logoColor=yellow
+[stars-url]: https://github.com/Gionnino9000/Gionnino9000/stargazers
+[plankness-shield]: https://custom-icon-badges.herokuapp.com/badge/plankness-100%25-yellow?logo=plankness&logoColor=yellow
+[plankness-url]: https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/WidePlank.gif
