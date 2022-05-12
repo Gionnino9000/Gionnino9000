@@ -2,7 +2,6 @@
 
 ### Regole di Gioco
 <img align="right" width="280" height="280" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/Tablut/src/it/unibo/ai/didattica/competition/tablut/gui/resources/board2.png">
-
 **_Tablut_** è un antico gioco da tavolo di origini nordiche, la cui storia non è del tutto certa.
 Esistono diverse regole, ma quelle descritte in questa pagina, chiamate anche "Regole di Ashton", sono le regole adottate per la challenge.
 
@@ -20,6 +19,8 @@ sono le posizioni di partenza delle pedine nere, su cui si possono muovere esclu
 è la posizione di partenza del re. Come per i campi, solo il re può trovarsi in questa casella, ma se esce non può più rientrare;
 - le **vie di fuga** <img width="25" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/Tablut/src/it/unibo/ai/didattica/competition/tablut/gui/resources/escape.png"/>.
 Se il re si muove su una di queste caselle, il bianco vince.
+
+<img align="right" width="280" height="280" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/Tablut/src/it/unibo/ai/didattica/competition/tablut/gui/resources/board2.png"/>
 
 **Movimenti** possibili:
 - le pedine si muovono ortogonalmente (ovvero non possono fare mosse in diagonale), di un numero qualsiasi di caselle, ma non possono scavalcare i campi ed il castello, o altre pedine;
