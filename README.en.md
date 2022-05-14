@@ -60,15 +60,15 @@ Distributed under BSD 3-Clause License. See [`LICENSE`](./LICENSE) for further i
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
 
 ### Huge Memes
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/WidePlank.gif"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/GionninoSus.png"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/TavolettaPiediGrandi.png"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/TavolettaPH.png"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_eating_matress.gif"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_SUS_smile.jpg"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Ed/Ed_coconut.jpg"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Edd/Edd_St00ped.jpg"/>
-<img width="50%" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/Kevin/Kevin_yelling.png"/> 
+<img width="50%" src="./gfx/GionninoTavoletta/WidePlank.gif"/>
+<img width="50%" src="./gfx/GionninoTavoletta/GionninoSus.png"/>
+<img width="50%" src="./gfx/GionninoTavoletta/TavolettaPiediGrandi.png"/>
+<img width="50%" src="./gfx/GionninoTavoletta/TavolettaPH.png"/>
+<img width="50%" src="./gfx/Ed/Ed_eating_matress.gif"/>
+<img width="50%" src="./gfx/Ed/Ed_SUS_smile.jpg"/>
+<img width="50%" src="./gfx/Ed/Ed_coconut.jpg"/>
+<img width="50%" src="./gfx/Edd/Edd_St00ped.jpg"/>
+<img width="50%" src="./gfx/Kevin/Kevin_yelling.png"/> 
 
 [java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
 [java-url]: https://www.java.com
