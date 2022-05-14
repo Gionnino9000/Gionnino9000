@@ -10,23 +10,22 @@
 <h1 align="center">Gionnino9000</h1>
 <div align="center">
 
-Our player for the Tablut Challenge 2022, 
-Repository della nostra soluzione per la Tablut Challenge 2022 organized for the course
+Our repository for the *Tablut Challenge 2022*, organized for the course
 <a href="https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002">Fundamentals of Artificial Intelligence M</a>.
 For more information about the game rules, the competition rules and about the strategy adopted by our team, click 
-<a href="https://github.com/Gionnino9000/Gionnino9000/blob/main/About.en.md">here</a>.
+<a href="./About.en.md">here</a>.
 <br/><br/>
 <a href="https://www.youtube.com/watch?v=G2NjmWRps28">Listen to this banger</a>
 
 </div>
 
 ### Running the Player
-- Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
-- Launch the Server
-- Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
+1. Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
+2. Launch the Server
+3. Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
   (ex. `java -jar ./Tavoletta.jar WHITE 60 localhost`)
-- Launch a second player, for example a random or human client, or another player
-- Have fun!
+4. Launch a second player, for example a random or human client, or another player
+5. Have fun!
 
 ### Name Explanation
 - Tablut = similar to _tavolo_ (_plank_ in Italian)
@@ -45,14 +44,16 @@ So basically, I mean, we were like picking the name (woo, I mean, you cannot und
 - [Alex Gianelli](https://github.com/Noesh)
 - [Michele Righi](https://github.com/mikyll)
 
+<img width="50%" src="./gfx/Ed/Ed_running.gif"/>
+
 ### Best Teams of Previous Years
-[History & Hall of Fame](https://github.com/Gionnino9000/Gionnino9000/blob/main/History.md).
+[History & Hall of Fame](./History.md).
 
 ### Setup
-Refer to [this document](https://github.com/Gionnino9000/Gionnino9000/blob/main/Setup.en.md).
+Refer to [this document](./Setup.en.md).
 
 ### License
-Distributed under BSD 3-Clause License. See [`LICENSE`](https://github.com/Gionnino9000/Gionnino9000/blob/main/LICENSE) for further information.
+Distributed under BSD 3-Clause License. See [`LICENSE`](./LICENSE) for further information.
    
 ### References
 - [Challenge site](http://ai.unibo.it/games/boardgamecompetition/tablut)
