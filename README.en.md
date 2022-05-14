@@ -20,6 +20,8 @@ For more information about the game rules, the competition rules and about the s
 </div>
 
 ### Running the Player
+<img width="30%" align="right" src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
+
 1. Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
 2. Launch the Server
 3. Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
