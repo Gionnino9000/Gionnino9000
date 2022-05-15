@@ -53,7 +53,7 @@ public class TavolettaSearch extends IterativeDeepeningAlphaBetaSearch<State, Ac
     @Override
     public Action makeDecision(State state) {
         Action a = super.makeDecision(state);
-        System.out.println(TEAM_NAME + ": " + PLAYER_NAME + " dice che ha esplorato " + getMetrics().get(METRICS_NODES_EXPANDED) + " nodi, raggiungendo una profondità di " + getMetrics().get(METRICS_MAX_DEPTH));
+        System.out.println(TEAM_NAME.toUpperCase() + ": " + PLAYER_NAME + " dice che ha esplorato " + getMetrics().get(METRICS_NODES_EXPANDED) + " nodi, raggiungendo una profondità di " + getMetrics().get(METRICS_MAX_DEPTH));
 
         return a;
     }
