@@ -7,8 +7,11 @@
 [![Plankness][plankness-shield]][plankness-url]
 </div>
 
-<h1 align="center">Gionnino9000</h1>
 <div align="center">
+<br/>
+<img width="50%" src="./gfx/Logo_Gionnino9000_1.png#gh-dark-mode-only"/>
+<img width="50%" src="./gfx/Logo_Gionnino9000_2.png#gh-light-mode-only"/>
+<br/><br/>
 
 Our repository for the *Tablut Challenge 2022*, organized for the course
 <a href="https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002">Fundamentals of Artificial Intelligence M</a>.
@@ -70,7 +73,12 @@ Distributed under BSD 3-Clause License. See [`LICENSE`](./LICENSE) for further i
 <img width="50%" src="./gfx/Ed/Ed_SUS_smile.jpg"/>
 <img width="50%" src="./gfx/Ed/Ed_coconut.jpg"/>
 <img width="50%" src="./gfx/Edd/Edd_St00ped.jpg"/>
-<img width="50%" src="./gfx/Kevin/Kevin_yelling.png"/> 
+<img width="50%" src="./gfx/Kevin/Kevin_Motoretta.gif"/>
+<img width="50%" src="./gfx/Kevin/Kevin_Sussying1.png"/>
+<img width="50%" src="./gfx/Kevin/Kevin_yelling.png"/>
+<img width="50%" src="./gfx/Rolf/Rolf_Listening_to_Chicken.png"/>
+<img width="50%" src="./gfx/Rolf/Rolf_Spotlight.png"/>
+<img width="50%" src="./gfx/Jimmy/Jimmy_Buffed.gif"/> 
 
 [java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
 [java-url]: https://www.java.com
