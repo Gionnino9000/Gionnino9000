@@ -9,8 +9,8 @@
 
 <div align="center">
 <br/>
-<img width="50%" src="./gfx/Logo_Gionnino9000_1.png#gh-dark-mode-only"/>
-<img width="50%" src="./gfx/Logo_Gionnino9000_2.png#gh-light-mode-only"/>
+<img width="50%" src="./gfx/Logo_Gionnino9000_Light.png#gh-dark-mode-only"/>
+<img width="50%" src="./gfx/Logo_Gionnino9000_Dark.png#gh-light-mode-only"/>
 <br/><br/>
 
 Our repository for the *Tablut Challenge 2022*, organized for the course
