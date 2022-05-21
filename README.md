@@ -23,14 +23,36 @@ Per maggiori informazioni sulle regole del gioco, sulle regole della competizion
 </div>
 
 ### Esecuzione del Player
-<img width="30%" align="right" src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
 
-1. Download dell'[ultima release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) del nostro player Tavoletta
-2. Esecuzione del Server
-3. Esecuzione del Player con parametri <WHITE|BLACK> \<timeout> <ip_address>
-   (es: `java -jar ./Tavoletta.jar WHITE 60 localhost`)
-4. Esecuzione di un secondo player, ad esempio un random, un client umano oppure un altro giocatore.
+<table>
+  <tr width="100%">
+    <td width="69%">
+      <ol>
+        <li>Download the <a href="https://github.com/Gionnino9000/Gionnino9000/releases/latest">latest release</a> of our player Tavoletta</li>
+        <li>Launch the Server</li>
+        <li>Launch the Player with the following parameters: <code>&#60;WHITE|BLACK></code> <code>&#60;timeout></code> <code>&#60;ip_address></code> 
+          (ex. <code>java -jar ./Tavoletta.jar WHITE 60 localhost</code>)</li>
+        <li>Launch a second player, for example a random or human client, or another player</li>
+        <li>Have fun!</li>
+      </ol>
+    </td>
+    <td align="center" width="30%">
+      <img src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
+      Demo velocizzata
+   </td>
+  </tr>
+</table>
+
+<!--
+Non so che caBBo di problema abbiano le GIF, ma si rompe l'align, quindi tocca fare sto aborto in raw HTML
+<img align="right" src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
+1. Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
+2. Launch the Server
+3. Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
+  (ex. `java -jar ./Tavoletta.jar WHITE 60 localhost`)
+4. Launch a second player, for example a random or human client, or another player
 5. Have fun!
+-->
 
 ### Spiegazione del Nome
 - Tablut = Tavoletta
