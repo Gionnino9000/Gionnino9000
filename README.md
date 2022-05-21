@@ -30,8 +30,8 @@ Per maggiori informazioni sulle regole del gioco, sulle regole della competizion
       <ol>
         <li>Download the <a href="https://github.com/Gionnino9000/Gionnino9000/releases/latest">latest release</a> of our player Tavoletta</li>
         <li>Launch the Server</li>
-        <li>Launch the Player with the following parameters: <code>&#60;WHITE|BLACK></code> <code>&#60;timeout></code> <code>&#60;ip_address></code> 
-          (ex. <code>java -jar ./Tavoletta.jar WHITE 60 localhost</code>)</li>
+        <li>Launch the Player with the following parameters: <code>&#60;WHITE|BLACK></code> <code>[&#60;timeout>]</code> <code>[&#60;ip_address>]</code><br/>
+          (es. <code>java -jar ./Tavoletta.jar WHITE 60 localhost</code>)</li>
         <li>Launch a second player, for example a random or human client, or another player</li>
         <li>Have fun!</li>
       </ol>
