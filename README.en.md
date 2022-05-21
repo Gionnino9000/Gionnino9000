@@ -36,7 +36,10 @@ For more information about the game rules, the competition rules and about the s
         <li>Have fun!</li>
       </ol>
     </td>
-    <td width="30%"><img src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/></td>
+    <td align="center" width="30%">
+      <img src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
+      Speeded up demo
+    </td>
   </tr>
 </table>
 
