@@ -2,6 +2,7 @@
 
 ### Regole di Gioco
 <img align="right" width="280" height="280" src="https://github.com/Gionnino9000/Gionnino9000/blob/main/Tablut/src/it/unibo/ai/didattica/competition/tablut/gui/resources/board2.png">
+
 **_Tablut_** è un antico gioco da tavolo di origini nordiche, la cui storia non è del tutto certa.
 Esistono diverse regole, ma quelle descritte in questa pagina, chiamate anche "Regole di Ashton", sono le regole adottate per la challenge.
 
