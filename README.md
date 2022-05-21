@@ -62,6 +62,7 @@ Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori
 ### Riferimenti
 - [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
+- [Tablut Tactics](https://github.com/mikyll/TablutTactics)
 
 ### Memoni Giganti
 <img width="50%" src="./gfx/GionninoTavoletta/WidePlank.gif"/>
