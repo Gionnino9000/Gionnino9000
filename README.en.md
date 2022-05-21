@@ -63,6 +63,7 @@ Distributed under BSD 3-Clause License. See [`LICENSE`](./LICENSE) for further i
 ### References
 - [Challenge site](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
+- [Tablut Tactics](https://github.com/mikyll/TablutTactics)
 
 ### Huge Memes
 <img width="50%" src="./gfx/GionninoTavoletta/WidePlank.gif"/>
