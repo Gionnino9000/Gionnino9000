@@ -14,7 +14,7 @@ import java.net.UnknownHostException;
 /**
  * <b>Tavoletta</b> is the client of our player for the
  * <a href="https://ai.unibo.it/games/boardgamecompetition/tablut/2122INF"><b>AI Tablut Challenge 2022</b></a>.
- * We know you're reading this, you're free to "copy" it, just don't make it too obvious.<br/>You can find the complete
+ * We know you're reading this, you're free to "copy" it, just don't make it too obvious.<br>You can find the complete
  * source code of the project <a href="https://github.com/Gionnino9000/Gionnino9000">here</a>.
  *
  * @see <a href="https://github.com/Gionnino9000/Gionnino9000#spiegazione-del-nome">this</a> for the name explaination,
