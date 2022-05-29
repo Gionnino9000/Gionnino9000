@@ -6,23 +6,29 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 import java.util.Arrays;
 
 /**
- * Heuristics for the evaluation of a white player state.
+ * Heuristics for the evaluation of a white player state.<br/>
  *
- * Description: TO-DO [...]
+ * Description: the defender (white player) heuristics is
+ * based on a weighted sum, with 4 different weights (WHITE_ALIVE,
+ * BLACK_EATEN, KING_MOVEMENT, SAFE_PAWNS) and bonuses in
+ * special cases.<br/>
+ * The key feature is the pre-evaluation of the king
+ * check states: if the king can be captured in a specific
+ * state, we immediately return the worst value (-Infinite)
+ * for that state, without making further calculations.
  *
  * @author Gionnino9000
  */
 public class WhiteHeuristics extends Heuristics{
 
-    private final int WHITE_ALIVE = 0;
-    private final int BLACK_EATEN = 1;
-    private final int KING_MOVEMENT = 2;
-    private final int SAFE_PAWNS = 3;
+    private final int WHITE_ALIVE = 0; // White pawns still alive
+    private final int BLACK_EATEN = 1; // Black pawns eaten
+    private final int KING_MOVEMENT = 2; // Directions in which the king can move
+    private final int SAFE_PAWNS = 3; // White pawns that can't be eaten
 
     // Flag to enable console print
     private boolean print = false;
 
-    // Weights for evaluation in the following order: WhiteAlive, BlackEaten, BestTiles, NumKingEscapes
     private final Double[] gameWeights;
 
     public WhiteHeuristics(State state) {

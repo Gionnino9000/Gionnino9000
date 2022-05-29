@@ -6,18 +6,38 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 import java.util.Arrays;
 
 /**
- * Heuristics for the evaluation of a black player state.
- * Description: TO-DO [...]
+ * Heuristics for the evaluation of a black player state.<br/>
+ *
+ * Description: the attacker (black player) heuristics is
+ * based on a weighted sum, with 5 different weights (WHITE_EATEN,
+ * BLACK_ALIVE, BLACK_SUR_K, RHOMBUS_POS, BLOCKED_ESC) and
+ * bonuses in special cases.<br/>
+ * The key feature of the evaluation is based on the
+ * adoption of 2 different set of weights depending on
+ * the game phase:
+ * <ul>
+ *     <li><b>early game</b>, we focus on a more defensive
+ *     approach, trying to eat as many enemy pawns as
+ *     possible, and trying to keep several allied pawns alive
+ *     at the same time. In addition to that, we also try
+ *     to get into a rhombus formation, to prevent the
+ *     king from escaping;</li>
+ *     <li><b>late game</b>, we focus on a more aggressive
+ *     approach, giving more weight to the king surrounding
+ *     and blocking his escapes.</li>
+ * </ul>
+ * We switch to late game when the white pawn number
+ * is below 5.
  *
  * @author Gionnino9000
  */
 public class BlackHeuristics extends Heuristics {
 
-    private final int WHITE_EATEN = 0;
-    private final int BLACK_ALIVE = 1;
-    private final int BLACK_SUR_K = 2;
-    private final int RHOMBUS_POS = 3;
-    private final int BLOCKED_ESC = 3;
+    private final int WHITE_EATEN = 0; // White pawns already eaten
+    private final int BLACK_ALIVE = 1; // Black pawns still alive
+    private final int BLACK_SUR_K = 2; // Black pawns surrounding the king
+    private final int RHOMBUS_POS = 3; // Formation to prevent the king from escaping
+    private final int BLOCKED_ESC = 3; // Pawns that block king escapes
 
     private final double PAWNS_AGGRESSION_WEIGHT = 2.0;
 
@@ -27,7 +47,6 @@ public class BlackHeuristics extends Heuristics {
     // Number of tiles in rhombus
     private final int TILES_IN_RHOMBUS = 8;
 
-    // Weights for evaluation in the following order: WhiteEaten, BlackAlive, BlackSurroundingKing, RhombusPos
     private final Double[] earlyGameWeights;
     private final Double[] lateGameWeights;
 
