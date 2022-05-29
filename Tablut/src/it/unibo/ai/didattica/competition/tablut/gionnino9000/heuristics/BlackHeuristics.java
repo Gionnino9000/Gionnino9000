@@ -6,12 +6,12 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 import java.util.Arrays;
 
 /**
- * Heuristics for the evaluation of a black player state.<br/>
+ * Heuristics for the evaluation of a black player state.<br>
  *
  * Description: the attacker (black player) heuristics is
  * based on a weighted sum, with 5 different weights (WHITE_EATEN,
  * BLACK_ALIVE, BLACK_SUR_K, RHOMBUS_POS, BLOCKED_ESC) and
- * bonuses in special cases.<br/>
+ * bonuses in special cases.<br>
  * The key feature of the evaluation is based on the
  * adoption of 2 different set of weights depending on
  * the game phase:

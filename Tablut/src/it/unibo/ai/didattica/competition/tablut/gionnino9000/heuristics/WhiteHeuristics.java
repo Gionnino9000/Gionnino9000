@@ -6,12 +6,12 @@ import it.unibo.ai.didattica.competition.tablut.domain.State;
 import java.util.Arrays;
 
 /**
- * Heuristics for the evaluation of a white player state.<br/>
+ * Heuristics for the evaluation of a white player state.<br>
  *
  * Description: the defender (white player) heuristics is
  * based on a weighted sum, with 4 different weights (WHITE_ALIVE,
  * BLACK_EATEN, KING_MOVEMENT, SAFE_PAWNS) and bonuses in
- * special cases.<br/>
+ * special cases.<br>
  * The key feature is the pre-evaluation of the king
  * check states: if the king can be captured in a specific
  * state, we immediately return the worst value (-Infinite)

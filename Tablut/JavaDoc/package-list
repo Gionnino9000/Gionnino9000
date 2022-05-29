@@ -1,4 +1,11 @@
-Domain
-Exceptions
-GUI
-ServerTablut
+it.unibo.ai.didattica.competition.tablut.client
+it.unibo.ai.didattica.competition.tablut.domain
+it.unibo.ai.didattica.competition.tablut.exceptions
+it.unibo.ai.didattica.competition.tablut.gionnino9000.clients
+it.unibo.ai.didattica.competition.tablut.gionnino9000.heuristics
+it.unibo.ai.didattica.competition.tablut.gionnino9000.search
+it.unibo.ai.didattica.competition.tablut.gui
+it.unibo.ai.didattica.competition.tablut.logreader
+it.unibo.ai.didattica.competition.tablut.server
+it.unibo.ai.didattica.competition.tablut.tester
+it.unibo.ai.didattica.competition.tablut.util
