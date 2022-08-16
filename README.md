@@ -23,6 +23,7 @@ Per maggiori informazioni sulle regole del gioco, sulle regole della competizion
 </div>
 
 ### Esecuzione del Player
+---
 
 <table>
   <tr width="100%">
@@ -55,6 +56,7 @@ Non so che caBBo di problema abbiano le GIF, ma si rompe l'align, quindi tocca f
 -->
 
 ### Spiegazione del Nome
+---
 - Tablut = Tavoletta
 - Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**
 - Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)
@@ -65,6 +67,7 @@ Non so che caBBo di problema abbiano le GIF, ma si rompe l'align, quindi tocca f
 Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non puoi capire), quando all'improvviso mi sono ricordato che quel chad di Danny Antonucci aveva fatto tipo un [masterpiece](https://en.wikipedia.org/wiki/Ed,_Edd_n_Eddy). E allora ho assolutamente dovuto sussare un nome zio, ho dovuto mostrare un po' di drip, no cap my G, only flames 🥶 e ho droppato sto pezzo di nome gigante bro, figata. Perché praticamente vez, noi così siamo il team Gionnino9000, e tipo il nostro player è Tavoletta. Capito bel? Perché gioca a Tablut, troppo figata, sigma grindset, basato fattuale.
 
 ### Membri del Team
+---
 - [Federico Andrucci](https://github.com/Federicoand98)
 - [Karina Chichifoi](https://github.com/TryKatChup)
 - [Alex Gianelli](https://github.com/Noesh)
@@ -73,27 +76,34 @@ Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non 
 <img width="50%" src="./gfx/Ed/Ed_running.gif"/>
 
 ### Setup
+---
 Per il setup fare riferimento a [questo documento](./Setup.md).
 
-### Premi Speciali
-#### Contemporary Art
+### Premi speciali
+---
+<img width="30%" src="./gfx/prize.png"/>
 
+#### Contemporary Art
 You know why.
 
-<img width="50%" src="./gfx/prize.png"/>
-
 ### Licenza
+---
 Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori informazioni.
 
 ### Migliori Team degli Anni Precedenti
+---
+
 [History & Hall of Fame](./History.md).
 
 ### Riferimenti
+---
 - [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
 - [Tablut Tactics](https://github.com/mikyll/TablutTactics)
 
 ### Memoni Giganti
+---
+
 <img width="50%" src="./gfx/GionninoTavoletta/WidePlank.gif"/>
 <img width="50%" src="./gfx/GionninoTavoletta/GionninoSus.png"/>
 <img width="50%" src="./gfx/GionninoTavoletta/TavolettaPiediGrandi.png"/>
