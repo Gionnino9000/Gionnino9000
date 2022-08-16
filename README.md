@@ -15,7 +15,7 @@
 
 Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di
 <a href="https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002">Fondamenti di Intelligenza Artificiale M</a>.
-Per maggiori informazioni sulle regole del gioco, sulle regole della competizione e sulla strategia adottata, clicca 
+Per maggiori informazioni sulle regole del gioco, sulle regole della competizione e sulla strategia adottata, clicca
 <a href="./About.md">qui</a>.
 <br/><br/>
 <a href="https://www.youtube.com/watch?v=G2NjmWRps28">Ascolta sto banger</a>
@@ -48,7 +48,7 @@ Non so che caBBo di problema abbiano le GIF, ma si rompe l'align, quindi tocca f
 <img align="right" src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
 1. Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
 2. Launch the Server
-3. Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>` 
+3. Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>`
   (ex. `java -jar ./Tavoletta.jar WHITE 60 localhost`)
 4. Launch a second player, for example a random or human client, or another player
 5. Have fun!
@@ -75,12 +75,19 @@ Quindi in pratica fra, cioè stavamo tipo scegliendo il nome (assurdo cioè non 
 ### Setup
 Per il setup fare riferimento a [questo documento](./Setup.md).
 
+### Premi Speciali
+#### Contemporary Art
+
+You know why.
+
+<img width="50%" src="./gfx/prize.png"/>
+
 ### Licenza
 Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori informazioni.
 
 ### Migliori Team degli Anni Precedenti
 [History & Hall of Fame](./History.md).
-   
+
 ### Riferimenti
 - [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
 - [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
@@ -100,7 +107,7 @@ Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori
 <img width="50%" src="./gfx/Kevin/Kevin_yelling.png"/>
 <img width="50%" src="./gfx/Rolf/Rolf_Listening_to_Chicken.png"/>
 <img width="50%" src="./gfx/Rolf/Rolf_Spotlight.png"/>
-<img width="50%" src="./gfx/Jimmy/Jimmy_Buffed.gif"/> 
+<img width="50%" src="./gfx/Jimmy/Jimmy_Buffed.gif"/>
 
 [java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
 [java-url]: https://www.java.com
