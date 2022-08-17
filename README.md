@@ -76,7 +76,7 @@ Capito bel? Perché gioca a Tablut, troppo figata, sigma grindset, basato fattua
 ---
 
 <div align="left">
-<img align="right" width="50%" src="./gfx/Team_Members.jpg">
+<img align="right" width="50%" src="./gfx/Team_Members_Low_Quality.jpg">
 
 - [Federico Andrucci](https://github.com/Federicoand98)
 - [Karina Chichifoi](https://github.com/TryKatChup)

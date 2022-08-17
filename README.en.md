@@ -66,7 +66,7 @@ Got it? Because he plays Tablut bro, too cool, sigma grindset, based factual.
 ### Team Members
 ---
 <div align="left">
-<img align="right" width="50%" src="./gfx/Team_Members.jpg">
+<img align="right" width="50%" src="./gfx/Team_Members_Low_Quality.jpg">
 
 - [Federico Andrucci](https://github.com/Federicoand98)
 - [Karina Chichifoi](https://github.com/TryKatChup)
