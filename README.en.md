@@ -29,11 +29,12 @@ For more information about the game rules, the competition rules and about the s
   <tr width="100%">
     <td width="69%">
       <ol>
-        <li>Download the <a href="https://github.com/Gionnino9000/Gionnino9000/releases/latest">latest release</a> of our player Tavoletta</li>
-        <li>Launch the Server</li>
-        <li>Launch the Player with the following parameters: <code>&#60;WHITE|BLACK></code> <code>[&#60;timeout>]</code> <code>[&#60;ip_address>]</code><br/>
-          (ex. <code>java -jar ./Tavoletta.jar WHITE 60 localhost</code>)</li>
-        <li>Launch a second player, for example a random or human client, or another player</li>
+        <li>Download the <a href="https://github.com/Gionnino9000/Gionnino9000/releases/latest">latest release</a> of our player Tavoletta.</li>
+        <li>Launch the Server.</li>
+        <li>Launch the Player with the following parameters:<br/>
+            <code>&#60;WHITE|BLACK></code> <code>[&#60;timeout>]</code> <code>[&#60;ip_address>]</code><br/>
+          (ex. <code>java -jar ./Tavoletta.jar WHITE 60 localhost</code>).</li>
+        <li>Launch a second player, for example a random or human client, or another player.</li>
         <li>Have fun!</li>
       </ol>
     </td>
@@ -55,33 +56,40 @@ For more information about the game rules, the competition rules and about the s
 
 _End of Name Explanation_
 
-So basically, I mean, we were like picking the name (woo, I mean, you cannot understand), when all of a sudden I remembered that chad Danny Antonucci had made like a [masterpiece](https://en.wikipedia.org/wiki/Ed,_Edd_n_Eddy). So I absolutely had to sus out a name bro, I had to show some drip, no cap my G, only flames 🥶 and then I dropped this giant name piece bro, cool. Because, basically dude, we are team Gionnino9000, and our player is Plank you know. Got it? Because he plays Tablut bro, too cool, sigma grindset, based factual.
+So basically, I mean, we were like picking the name (woo, I mean, you cannot understand),
+when all of a sudden I remembered that chad Danny Antonucci had made like a [masterpiece](https://en.wikipedia.org/wiki/Ed,_Edd_n_Eddy).
+So I absolutely had to sus out a name bro, I had to show some drip, no cap my G,
+only flames 🥶 and then I dropped this giant piece of a name, bro, cool.
+Because, basically dude, we are team Gionnino9000, and our player is Plank you know.
+Got it? Because he plays Tablut bro, too cool, sigma grindset, based factual.
 
 ### Team Members
 ---
+<div align="left">
+<img align="right" width="50%" src="./gfx/Team_Members.jpg">
 
 - [Federico Andrucci](https://github.com/Federicoand98)
-- [Karina Chichifoi](https://github.com/TryKatChup/TryKatChup)
+- [Karina Chichifoi](https://github.com/TryKatChup)
 - [Alex Gianelli](https://github.com/Noesh)
 - [Michele Righi](https://github.com/mikyll)
 
-<img width="50%" src="./gfx/Ed/Ed_running.gif"/>
+</div>
 
 ### Best Teams of Previous Years
 ---
 
 [History & Hall of Fame](./History.md).
 
-### Setup
----
-Refer to [this document](./Setup.en.md).
-
 ### Special Prizes
 ---
 <img width="30%" src="./gfx/prize.png"/>
 
 #### Contemporary Art
-You know why.
+*You know why.*
+
+### Setup
+---
+Refer to [this document](./Setup.en.md).
 
 ### License
 ---
@@ -101,6 +109,7 @@ Distributed under BSD 3-Clause License. See [`LICENSE`](./LICENSE) for further i
 <img width="50%" src="./gfx/GionninoTavoletta/TavolettaPH.png"/>
 <img width="50%" src="./gfx/Ed/Ed_eating_matress.gif"/>
 <img width="50%" src="./gfx/Ed/Ed_SUS_smile.jpg"/>
+<img width="50%" src="./gfx/Ed/Ed_running.gif"/>
 <img width="50%" src="./gfx/Ed/Ed_coconut.jpg"/>
 <img width="50%" src="./gfx/Edd/Edd_St00ped.jpg"/>
 <img width="50%" src="./gfx/Kevin/Kevin_Motoretta.gif"/>
