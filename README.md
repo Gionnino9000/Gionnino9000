@@ -136,7 +136,7 @@ Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori
 [downloads-url]: https://github.com/Gionnino9000/Gionnino9000/releases/latest
 [license-shield]: https://img.shields.io/github/license/Gionnino9000/Gionnino9000
 [license-url]: https://github.com/Gionnino9000/Gionnino9000/blob/main/LICENSE
-[stars-shield]: https://custom-icon-badges.herokuapp.com/github/stars/Gionnino9000/Gionnino9000?logo=star&logoColor=yellow
+[stars-shield]: https://custom-icon-badges.herokuapp.com/github/stars/Gionnino9000/Gionnino9000?logo=star&logoColor=yellow&style=flat
 [stars-url]: https://github.com/Gionnino9000/Gionnino9000/stargazers
 [plankness-shield]: https://custom-icon-badges.herokuapp.com/badge/plankness-100%25-yellow?logo=plankness&logoColor=yellow
 [plankness-url]: https://github.com/Gionnino9000/Gionnino9000/blob/main/gfx/GionninoTavoletta/WidePlank.gif
