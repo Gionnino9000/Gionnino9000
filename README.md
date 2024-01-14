@@ -130,7 +130,7 @@ Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori
 <img width="50%" src="./gfx/Rolf/Rolf_Spotlight.png"/>
 <img width="50%" src="./gfx/Jimmy/Jimmy_Buffed.gif"/>
 
-[java-shield]: https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white
+[java-shield]: https://custom-icon-badges.herokuapp.com/badge/Java-ED8B00?logo=java&logoColor=white
 [java-url]: https://www.java.com
 [downloads-shield]: https://img.shields.io/github/downloads/Gionnino9000/Gionnino9000/total
 [downloads-url]: https://github.com/Gionnino9000/Gionnino9000/releases/latest
