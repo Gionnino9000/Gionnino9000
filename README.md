@@ -13,7 +13,7 @@
 <img width="50%" src="./gfx/Logo_Gionnino9000_Dark.png#gh-light-mode-only"/>
 <br/><br/>
 
-Repository della nostra soluzione per la Tablut Challenge 2022 organizzata per il corso di
+Repository della nostra soluzione per la _**Tablut Challenge 2022**_ organizzata per il corso di
 <a href="https://www.unibo.it/it/didattica/insegnamenti/insegnamento/2021/468002">Fondamenti di Intelligenza Artificiale M</a>.
 Per maggiori informazioni sulle regole del gioco, sulle regole della competizione e sulla strategia adottata, clicca
 <a href="./About.md">qui</a>.
@@ -22,8 +22,9 @@ Per maggiori informazioni sulle regole del gioco, sulle regole della competizion
 
 </div>
 
-### Esecuzione del Player
----
+## Esecuzione del Player
+
+### AI Tavoletta
 
 <table>
   <tr width="100%">
@@ -34,7 +35,7 @@ Per maggiori informazioni sulle regole del gioco, sulle regole della competizion
         <li>Esegui il Player con i seguenti parametri:<br/>
             <code>&#60;WHITE|BLACK></code> <code>[&#60;timeout>]</code> <code>[&#60;ip_address>]</code><br/>
           (es. <code>java -jar ./Tavoletta.jar WHITE 60 localhost</code>)</li>
-        <li>Esegui un secondo player, ad esempio un client fittizio o uno umano, oppure un altro player.</li>
+        <li>Esegui un secondo player, ad esempio il <a href="#client-gui">client con grafica</a>, oppure un altro player.</li>
         <li>Divertiti!</li>
       </ol>
     </td>
@@ -45,19 +46,12 @@ Per maggiori informazioni sulle regole del gioco, sulle regole della competizion
   </tr>
 </table>
 
-<!--
-Non so che caBBo di problema abbiano le GIF, ma si rompe l'align, quindi tocca fare sto aborto in raw HTML
-<img align="right" src="./gfx/Games/BlackTavoletta_VS_WhiteTavoletta/BlackTavoletta_VS_WhiteTavoletta_x40.gif"/>
-1. Download the [latest release](https://github.com/Gionnino9000/Gionnino9000/releases/latest) of our player Tavoletta
-2. Launch the Server
-3. Launch the Player with the following parameters: `<WHITE|BLACK>` `<timeout>` `<ip_address>`
-  (ex. `java -jar ./Tavoletta.jar WHITE 60 localhost`)
-4. Launch a second player, for example a random or human client, or another player
-5. Have fun!
--->
+### Client GUI
 
-### Spiegazione del Nome
----
+https://user-images.githubusercontent.com/56556806/210091347-19bc307f-f2e9-4d9a-8fd7-7b4a1dc597c0.mp4
+
+## Spiegazione del Nome
+
 - Tablut = Tavoletta
 - Tavoletta = l'Amico immaginario di Jonnino in **Ed, Edd & Eddy**
 - Jonnino -> Gionnino (assolutamente non perché abbiamo sbagliato a scrivere il nome quando ci siamo iscritti)
@@ -72,8 +66,7 @@ no cap my G, only flames 🥶 e ho droppato sto pezzo di nome gigante bro, figat
 Perché praticamente vez, noi così siamo il team Gionnino9000, e tipo il nostro player è Tavoletta.
 Capito bel? Perché gioca a Tablut, troppo figata, sigma grindset, basato fattuale.
 
-### Membri del Team
----
+## Membri del Team
 
 <div align="left">
 <img align="right" width="50%" src="./gfx/Team_Members_Low_Quality.jpg">
@@ -85,34 +78,34 @@ Capito bel? Perché gioca a Tablut, troppo figata, sigma grindset, basato fattua
 
 </div>
 
-### Premi speciali
----
+## Premi speciali
+
 <img width="30%" src="./gfx/prize.png"/>
 
-#### Contemporary Art
+### Contemporary Art
 *You know why.*
 
-### Setup
----
+## Setup
+
 Per il setup fare riferimento a [questo documento](./Setup.md).
 
-### Licenza
----
+## Licenza
+
 Distribuito sotto Licenza BSD 3-Clause. Vedi [`LICENSE`](./LICENSE) per maggiori informazioni.
 
-### Migliori Team degli Anni Precedenti
----
+## Migliori Team degli Anni Precedenti
+
 
 [History & Hall of Fame](./History.md).
 
-### Riferimenti
----
-- [Sito Challenge](http://ai.unibo.it/games/boardgamecompetition/tablut)
-- [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
-- [Tablut Tactics](https://github.com/mikyll/TablutTactics)
+## Riferimenti
 
-### Memoni Giganti
----
+- Repository base per la competizione: [TablutCompetition]()
+- Sito challenge Unibo: [ai.unibo.it](http://ai.unibo.it/games/boardgamecompetition/tablut)
+- Paper Tablut: [An Upper Bound on the Complexity of Tablut](http://ai.unibo.it/sites/ai.unibo.it/files/Complexity_of_Tablut_2.pdf)
+- App grafica utile per testing/visualizzazione mosse e strategie: [TablutTactics](https://github.com/mikyll/TablutTactics)
+
+## Memoni Giganti
 
 <img width="50%" src="./gfx/GionninoTavoletta/WidePlank.gif"/>
 <img width="50%" src="./gfx/GionninoTavoletta/GionninoSus.png"/>
